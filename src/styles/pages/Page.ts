@@ -60,10 +60,15 @@ export const Main = styled.main`
 
   /* Courses - seções */
   .courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 130px;
+    width: calc(100vw - 1rem);
 
     > div {
-      /* display: flex; */
+      display: flex;
+      flex-wrap: wrap;
     }
 
     @media screen and (max-width: 940px) {

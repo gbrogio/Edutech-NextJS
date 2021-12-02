@@ -1,5 +1,4 @@
 // Konami Code (adiciona easter egg no site)
-
 export const KonamiCode = (modalActive) => {
   let allowKeys = []; // teclas pressionadas
   const konamiCode = 'edutech'; // palavra chave

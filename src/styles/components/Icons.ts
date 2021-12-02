@@ -4,6 +4,7 @@ import { Menu2Outline } from '@styled-icons/evaicons-outline/Menu2Outline';
 import { BookInformation } from '@styled-icons/fluentui-system-filled/BookInformation';
 import { Trash } from '@styled-icons/boxicons-regular/Trash'
 import { LogOut } from '@styled-icons/ionicons-outline/LogOut'
+import { Search } from '@styled-icons/material-outlined/Search'
 import Google from '../../assets/svg/google.svg';
 
 export const ArrowDown = styled(ArrowIosDownward)`
@@ -30,6 +31,15 @@ export const TrashIcon = styled(Trash)`
   height: 25px;
 `;
 export const Out = styled(LogOut)`
-width: 25px;
-height: 25px;
+  width: 25px;
+  height: 25px;
 `;
+export const SearchIcon = styled(Search)`
+  width: 25px;
+  height: 25px;
+  transform: translateX(calc(-25px - 1rem));
+  cursor: pointer;
+  :hover {
+    fill: rgb(var(--Stroke), 1);
+  }
+`

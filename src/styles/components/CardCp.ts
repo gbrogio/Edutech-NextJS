@@ -4,13 +4,14 @@ export const CardCp = createGlobalStyle`
   div.CardCp {
     cursor: pointer;
     position: relative;
-    background: linear-gradient(300.31deg, black 39.37%, rgb(var(--BackgroundComponents)) 39.38%);
+    width: auto;
+    background: linear-gradient(300.31deg, rgb(var(--Stroke)) 39.37%, rgb(var(--BackgroundComponents)) 39.38%);
     filter: drop-shadow(0px 4px 10px var(--Shadow));
 
     border-radius: 10px;
-    width: 362px;
+    max-width: 400px;
     height: 200px;
-    padding: 1.5rem 30% 0 2rem;
+    padding: 1.5rem 10rem 0 2rem;
     margin: 1.5rem;
     transition: .2s ease-in-out;
 
@@ -33,8 +34,19 @@ export const CardCp = createGlobalStyle`
       }
     }
 
-    :hover {
+    :hover, :focus {
       transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 464px) {
+      background: linear-gradient(0deg, rgb(var(--Stroke)) 31%, rgb(var(--BackgroundComponents)) 31%);
+
+      height: calc(auto + 200px);
+      padding: 1.5rem 2rem 0 2rem;
+      .descriptionCourse {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 `;
