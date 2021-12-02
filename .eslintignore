@@ -1,0 +1,12 @@
+# Manda o ESLint ignorar sua verificação em tais arquivos/pastas mencionadas
+# Node
+node_modules
+
+# Next
+.next
+
+# Build
+build
+
+# JS
+/*.js

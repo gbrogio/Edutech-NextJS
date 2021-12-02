@@ -1,0 +1,43 @@
+// configuração das tipagens
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "inputs/*": ["src/components/Inputs/"],
+      "context/*": ["src/context/*"],
+      "hook/*": ["src/hook/*"],
+      "lib/*": ["src/lib/*"],
+      "scripts/*": ["src/scripts/*"],
+      "styles/*": ["src/styles/*"],
+      "theme/*": ["src/styles/theme/*"],
+      "style-components/*": ["src/styles/components/*"],
+    },
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx", "src/pages/courses.jsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
