@@ -28,9 +28,9 @@ const InputCp: React.FC<inputProps> = ({
     <Container>
       {inputType === 'search' ? <>
         <div className="selectBar">
-          <Select name="serie">
+          <Select name="serie" id="selectBar">
             {selectOptions.value.map((item) => {
-              return <option value={item}>{item}</option>
+              return <option key={item}>{item}</option>
             })}
           </Select>
         </div>

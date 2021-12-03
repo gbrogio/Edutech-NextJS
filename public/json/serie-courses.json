@@ -1,0 +1,22 @@
+[
+  [
+    {"tempo_estimado":16,"slug":"logica-programacao-javascript-html","nome":"Lógica de programação I: Os primeiros programas com Javascript e HTML"},
+    {"tempo_estimado":10,"slug":"logica-programacao-pratica-com-desenho-animacoes-em-jogo","nome":"Lógica de programação II: pratique com desenhos, animações e um jogo"},
+    {"tempo_estimado":8,"slug":"html5-css3-primeiros-passos","nome":"HTML5 e CSS3 parte 1: A primeira página da Web"},
+    {"tempo_estimado":8,"slug":"html5-css3-posicionamento-listas-navegacao","nome":"HTML5 e CSS3 parte 2: Posicionamento, listas e navegação"},
+    {"tempo_estimado":8,"slug":"html5-css3-formularios-tabelas","nome":"HTML5 e CSS3 parte 3: Trabalhando com formulários e tabelas"},
+    {"tempo_estimado":8,"slug":"html5-css3-avancando-css","nome":"HTML5 e CSS3 parte 4: Avançando no CSS"},
+    {"tempo_estimado":8,"slug":"css-grid-layout","nome":"CSS Grid: Simplificando layouts"},
+    {"tempo_estimado":9,"slug":"posicione-elementos-com-flexbox","nome":"Flexbox: Posicione elementos na tela"},
+    {"tempo_estimado":12,"slug":"bootstrap-criacao-single-page-responsiva","nome":"Bootstrap: criação de uma single-page responsiva"},
+    {"tempo_estimado":8,"slug":"bootstrap-landing-page","nome":"Bootstrap 4: Criando uma landing page responsiva"},
+    {"tempo_estimado":8,"slug":"arquitetura-css","nome":"Arquitetura CSS: Descomplicando os problemas"},
+    {"tempo_estimado":6,"slug":"acessibilidade-web-front-end","nome":"Acessibilidade web parte 1: tornando seu front-end inclusivo"},
+    {"tempo_estimado":4,"slug":"acessibilidade-web-front-end-parte-2","nome":"Acessibilidade web parte 2: Componentes acessíveis com um pouco de JavaScript"},
+    {"tempo_estimado":14,"slug":"http-fundamentos","nome":"HTTP: Entendendo a web por baixo dos panos"},
+    {"tempo_estimado":6,"slug":"svg-css-animacao","nome":"Vetores e Animação com SVG: Trabalhando com CSS e JavaScript"},
+    {"tempo_estimado":7,"slug":"mobile-first-layouts-responsivos","nome":"Layouts Responsivos: Trabalhando com layouts mobile"},
+    {"tempo_estimado":6,"slug":"projeto-carreira-front-end","nome":"Front-end: Projeto de conclusão"}
+  ]
+]
+

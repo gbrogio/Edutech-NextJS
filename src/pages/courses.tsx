@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Header from 'components/Header';
 import { useRouter } from 'next/router';
 import InputCp from 'components/Inputs/InputCp'
+import {setCookie, parseCookies} from 'nookies'
 
 import { Main } from 'styles/pages/Page'
 
@@ -150,21 +151,39 @@ const Courses: React.FC = () => {
   let allCSearched  = [];
   let allCFiltered  = [];
 
-  // integração com a api da Alura
-  fetch('https://www.alura.com.br/api/cursos')
-    .then(res => res.json())
-    .then(data => {
-      allCourses.push(data)
-      for (let i = 0; i < allCourses[0].length; i++){
-        allCSearched.push(allCourses[0][i])
-        allCFiltered = allCSearched.filter((item, duplicate) => allCSearched.indexOf(item) === duplicate);
-      }
-    })
-
   useEffect(() => {
     const divC = document.getElementById('courses') // elemento de resposta
+    const selectSerie = document.getElementById('selectBar') as HTMLSelectElement;
     getCourseSection(divC) // armazenando
 
+    selectSerie.addEventListener('change', () => {
+
+      const selectValue = selectSerie.value
+      const routerSearch = selectValue.toLowerCase()
+        .replace(/º/g, '')
+        .replace(/é/g, 'e')
+        .replace(/\s/g, '+')
+
+      if (selectValue !== 'Selecione sua Série...') {
+        router.push('/courses' + '?=' + routerSearch).then(() => {
+          setCookie(null, 'SEARCH_COOKIE', selectValue, {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
+          router.reload()
+        })
+      } else {
+        router.push('/courses').then(() => {
+          setCookie(null, 'SEARCH_COOKIE', selectValue, {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
+          router.reload()
+        })
+      }
+    }, false)
+
+    selectSerie.value = parseCookies().SEARCH_COOKIE
     // pega o input
     var input = document.getElementById("searchElm") as HTMLInputElement;
 
@@ -176,7 +195,58 @@ const Courses: React.FC = () => {
       }
     })
   })
+  // integrações
+  if (router.asPath === '/courses') {
+    // api alura
+    fetch('https://www.alura.com.br/api/cursos')
+      .then(res => res.json())
+      .then(data => {
+        allCourses.push(data)
+        for (let i = 0; i < allCourses[0].length; i++){
+          allCSearched.push(allCourses[0][i])
+          allCFiltered = allCSearched.filter((item, duplicate) => allCSearched.indexOf(item) === duplicate);
+        }
+      })
+  } else { // meu json
+    fetch('/json/serie-courses.json')
+      .then(res => res.json()
+      ).then(data => {
+        const number = router.asPath.replace(/[^0-9]/g, '')
 
+        const configSearch = router.asPath
+          .replace(/^((ftp|http|https):\/\/)?(www.|)?([A-z&0-9./]*)/g, '')
+          .replace(/[?=+]/g, '')
+          .replace(/[0-9]/g, '')
+          .replace(/o([^o]*)$/g, 'o') + number
+
+        if (configSearch === "anoensinomedio1") {
+          allCourses.push(data[0])
+        }
+        if (configSearch === "anoensinomedio2") {
+          allCourses.push(data[1])
+        }
+        if (configSearch === "anoensinomedio3") {
+          allCourses.push(data[2])
+        }
+        if (configSearch === "ano6") {
+          allCourses.push(data[3])
+        }
+        if (configSearch === "ano7") {
+          allCourses.push(data[4])
+        }
+        if (configSearch === "ano8") {
+          allCourses.push(data[5])
+        }
+        if (configSearch === "ano9") {
+          allCourses.push(data[6])
+        }
+
+        for (let i = 0; i < allCourses[0].length; i++){
+          allCSearched.push(allCourses[0][i])
+          allCFiltered = allCSearched.filter((item, duplicate) => allCSearched.indexOf(item) === duplicate);
+        }
+      })
+  }
   // pesquisa
   const searchedCourse = async (keyWord) => {
     if(keyWord !== '') {
@@ -238,9 +308,9 @@ const Courses: React.FC = () => {
                 '7º ano',
                 '8º ano',
                 '9º ano',
-                '1º ano - Ensino Médio',
-                '2º ano - Ensino Médio',
-                '3º ano - Ensino Médio',
+                '1º ano Ensino Médio',
+                '2º ano Ensino Médio',
+                '3º ano Ensino Médio',
               ]
             }}
           />
