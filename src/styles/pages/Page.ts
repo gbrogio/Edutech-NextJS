@@ -67,7 +67,7 @@ export const Main = styled.main`
     margin-top: calc(130px + 3.5rem);
     width: calc(100vw - 1rem);
 
-    > div {
+    > div#courses {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;

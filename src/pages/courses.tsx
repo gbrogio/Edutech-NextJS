@@ -230,6 +230,19 @@ const Courses: React.FC = () => {
               error: 'alertFunc',
               hasIcon: 'search'
             }}
+            selectOptions={{
+              hasIcon: false,
+              value: [
+                'Selecione sua Série...',
+                '6º ano',
+                '7º ano',
+                '8º ano',
+                '9º ano',
+                '1º ano - Ensino Médio',
+                '2º ano - Ensino Médio',
+                '3º ano - Ensino Médio',
+              ]
+            }}
           />
           <div id="courses">
 

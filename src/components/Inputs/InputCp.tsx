@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 
 import { SearchIcon, ArrowDown } from 'styles/components/Icons';
-import { Container, Input } from './styleInputs';
+import { Container, Input, Select } from './styleInputs';
 
 // propriedades
 export interface inputProps {
@@ -11,18 +11,30 @@ export interface inputProps {
     iD: string;
     onChange: (ev: any) => void;
     placeholder: string;
-    hasIcon: 'search' | 'arrowDown';
+    hasIcon: boolean | 'search' | 'arrowDown';
     error: 'alertFunc' | 'msgModal';
+  };
+  selectOptions?: {
+    value: Array<string>;
+    hasIcon: boolean | 'search' | 'arrowDown';
   }
 }
 
 // componente
 const InputCp: React.FC<inputProps> = ({
-  inputType, textOptions //  recebendo propriedades
+  inputType, textOptions, selectOptions //  recebendo propriedades
 }) => {
   return (
     <Container>
       {inputType === 'search' ? <>
+        <div className="selectBar">
+          <Select name="serie">
+            {selectOptions.value.map((item) => {
+              return <option value={item}>{item}</option>
+            })}
+          </Select>
+        </div>
+
         <div className="searchBar">
           <Input
             type={inputType}
