@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import Header from 'components/Header';
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 import InputCp from 'components/Inputs/InputCp'
 import {setCookie, parseCookies} from 'nookies'
 
@@ -54,6 +54,10 @@ const createCardCp = async (name, slug, description, easterEgg, img) => {
     logoImg.appendChild(imageLogo)
     Container.appendChild(DivText)
     Container.appendChild(logoImg)
+
+    Container.addEventListener('click', () => {
+      router.push(`https://cursos.alura.com.br/course/${slug}`)
+    })
 
     return Container  // retornando o componente
 
@@ -133,6 +137,10 @@ const createCardCp = async (name, slug, description, easterEgg, img) => {
     logoCourse.appendChild(imageLogo)
     Container.appendChild(DivText)
     Container.appendChild(logoCourse)
+    
+    Container.addEventListener('click', () => {
+      router.push(`https://cursos.alura.com.br/course/${slug}`)
+    })
 
     return Container  // retornando o componente
   }
@@ -197,6 +205,11 @@ const Courses: React.FC = () => {
   })
   // integrações
   if (router.asPath === '/courses') {
+    setCookie(null, 'SEARCH_COOKIE', 'Selecione sua Série...', {
+      maxAge: 86400 * 7 * 4 * 12,
+      path: '/',
+    });
+
     // api alura
     fetch('https://www.alura.com.br/api/cursos')
       .then(res => res.json())
@@ -221,24 +234,52 @@ const Courses: React.FC = () => {
 
         if (configSearch === "anoensinomedio1") {
           allCourses.push(data[0])
+          setCookie(null, 'SEARCH_COOKIE', "1º ano Ensino Médio", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "anoensinomedio2") {
           allCourses.push(data[1])
+          setCookie(null, 'SEARCH_COOKIE', "2º ano Ensino Médio", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "anoensinomedio3") {
           allCourses.push(data[2])
+          setCookie(null, 'SEARCH_COOKIE', "3º ano Ensino Médio", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "ano6") {
           allCourses.push(data[3])
+          setCookie(null, 'SEARCH_COOKIE', "6º ano", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "ano7") {
           allCourses.push(data[4])
+          setCookie(null, 'SEARCH_COOKIE', "7º ano", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "ano8") {
           allCourses.push(data[5])
+          setCookie(null, 'SEARCH_COOKIE', "8º ano", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
         if (configSearch === "ano9") {
           allCourses.push(data[6])
+          setCookie(null, 'SEARCH_COOKIE', "9º ano", {
+            maxAge: 86400 * 7 * 4 * 12,
+            path: '/',
+          });
         }
 
         for (let i = 0; i < allCourses[0].length; i++){

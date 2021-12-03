@@ -1,5 +1,6 @@
 // importações
 import React, { useEffect } from 'react';
+import {parseCookies} from 'nookies'
 import { useRouter } from 'next/router';
 
 import { Container } from './styleLink';
@@ -26,7 +27,11 @@ const LinkCp: React.FC<props> = ({
     <Container
       tabIndex={tabIndex}
       aria-label={isActive ? children + ', status: ativo' : isActive === false ? children + ', status: desativado' : ariaLabel}
-      onClick={() => router.push(hRef)}
+      onClick={() => {
+        router.push(hRef).then(() => {
+          router.reload()
+        })
+      }}
       id={isInternal ? `${iD.get}` : ''}
       data-lid={iD.lid}
       className={isActive ? `activeLink ${iD.get === 'linkLeft' ? 'linkLeft' : ''}` : ''}
