@@ -5,6 +5,16 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
+  width: 100vw;
+
+  .searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(12.5px);
+    margin-bottom: 3rem;
+  }
 `;
 export const Input = styled.input`
   width: 556px;

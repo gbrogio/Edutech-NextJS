@@ -21,6 +21,9 @@ export default createGlobalStyle`
   .opacity {
     opacity: .7;
   }
+  .padding {
+    padding: 5rem;
+  }
   strong{
     font-weight: 900;
   }

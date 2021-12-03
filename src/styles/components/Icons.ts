@@ -35,8 +35,8 @@ export const Out = styled(LogOut)`
   height: 25px;
 `;
 export const SearchIcon = styled(Search)`
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  max-width: 25px;
   transform: translateX(calc(-25px - 1rem));
   cursor: pointer;
   :hover {

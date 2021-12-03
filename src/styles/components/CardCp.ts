@@ -10,6 +10,7 @@ export const CardCp = createGlobalStyle`
 
     border-radius: 10px;
     max-width: 400px;
+    min-width: 260px;
     height: 200px;
     padding: 1.5rem 10rem 0 2rem;
     margin: 1.5rem;
@@ -39,14 +40,19 @@ export const CardCp = createGlobalStyle`
     }
 
     @media screen and (max-width: 464px) {
-      background: linear-gradient(0deg, rgb(var(--Stroke)) 31%, rgb(var(--BackgroundComponents)) 31%);
+      background: linear-gradient(0deg, rgb(var(--Stroke)) 21%, rgb(var(--BackgroundComponents)) 21%);
 
-      height: calc(auto + 200px);
+      height: 17rem;
       padding: 1.5rem 2rem 0 2rem;
       .descriptionCourse {
         display: flex;
         flex-direction: column;
       }
+    }
+    @media screen and (max-width: 321px) {
+      padding: 1.5rem 1rem 0 1rem;
+      margin: .5rem;
+      max-width: 300px;
     }
   }
 `;

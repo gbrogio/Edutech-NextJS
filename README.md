@@ -75,7 +75,9 @@ Iniciar Servidor / Site:
 Dentro da pasta ***src***, você encontrará as pastas: ***Components***, ***Page*** e ***Styles***.
 Dentro delas, você pode editar o ***estilo***, ***formato*** e ***comportamento*** do *Site*.
 O ***CSS*** do site esta presente dentro da pasta ***Styles*** com o formato em ***.ts***, *Typescript*, ou
-dentro das pastas dos componentes com a nomenclatura **style[Componente].ts**
+dentro das pastas dos componentes com a nomenclatura **style[Componente].ts**.
+obs: Ao mexer com a responsividade da pagina, isto é seu tamanho, você deverá atualizar a pagina para
+continuar com a experiencia
 
 # <h1 id="Mapa">🔨 Mapa das Pastas</h1>
   ```bash

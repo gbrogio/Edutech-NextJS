@@ -8,86 +8,146 @@ import InputCp from 'components/Inputs/InputCp'
 import { Main } from 'styles/pages/Page'
 
 // Criando componente Card dos cursos
-const createCardCp = async (name, slug, time) => {
-  // criando elementos
-  const Container = document.createElement('div')
-  const imageLogo = document.createElement('img')
-  const DivText = document.createElement('div')
-  const Course = document.createElement('p')
-  const CourseDesc = document.createElement('p')
-  const Duration = document.createElement('p')
-  const DurationDesc = document.createElement('p')
-  const logoCourse = document.createElement('div')
+const createCardCp = async (name, slug, description, easterEgg, img) => {
+  if (easterEgg) {
+    // criando elementos
+    const Container = document.createElement('div')
+    const imageLogo = document.createElement('img')
+    const DivText = document.createElement('div')
+    const Name = document.createElement('p')
+    const NameDesc = document.createElement('p')
+    const Desc = document.createElement('p')
+    const DescDesc = document.createElement('p')
+    const logoImg = document.createElement('div')
 
-  // pegando cor do logo de cada curso
-  await fetch(`https://www.alura.com.br/assets/api/cursos/${slug}.svg`)
-    .then((response) => {
-      switch (response.status) {
-        case 200:
-          return response.text();
-      }
-    })
-    .then((template) => {
-      const parser = new DOMParser(); // cria uma dom propria para o elemento
-      const doc = parser.parseFromString(template, 'text/html'); // manda o elemento para a DOM criada
-      const svgElm = doc.querySelector('svg'); // pega o icone dentro da DOM
-      let getPath = svgElm.querySelector('path[fill]') // paga o elemento path que contenha um fill
-      let color; // seta a variavel de cor
+    // seta o background do componente de acordo com a cor recebida
+    if (window.innerWidth >= 464) {
+      Container.style.background = `linear-gradient(300.31deg, rgb(var(--Blue)) 39.38%, rgb(var(--BackgroundComponents)) 39.38%)`
+    } else {
+      Container.style.background = `linear-gradient(0deg, rgb(var(--Blue)) 21%, rgb(var(--BackgroundComponents)) 21%)`
+    }
 
-      // verificações
-      if (getPath?.attributes[0].nodeName !== 'fill' || getPath?.attributes[0].nodeValue === '#031326') {
-        color = getPath?.attributes[1].nodeValue // pega a cor desse icone
-      } else {
-        color = getPath?.attributes[0].nodeValue // pega a cor desse icone
-      }
+    // adicionando a logo do curso
+    imageLogo.setAttribute('src', img)
+    imageLogo.style.borderRadius = '50%';
 
-      // seta o background do componente de acordo com a cor recebida
-      if (window.innerWidth >= 464) {
-        Container.style.background = `linear-gradient(300.31deg, ${color} 39.38%, rgb(var(--BackgroundComponents)) 39.38%)`
-      } else {
-        Container.style.background = `linear-gradient(0deg, ${color} 31%, rgb(var(--BackgroundComponents)) 31%)`
-      }
-    })
-  // adicionando a logo do curso
-  imageLogo.setAttribute('src', `https://www.alura.com.br/assets/api/cursos/${slug}.svg`)
+    // adicionando classes e id para facilitar o controle do componente
+    Container.classList.add('CardCp')
+    Container.id = 'EasterEggCard'
+    Name.classList.add('bold')
+    Desc.classList.add('bold')
+    logoImg.classList.add('logoCourse')
+    DivText.classList.add('descriptionCourse')
 
-  // adicionando classes e id para facilitar o controle do componente
-  Container.classList.add('CardCp')
-  Container.id = slug
-  Course.classList.add('bold')
-  Duration.classList.add('bold')
-  logoCourse.classList.add('logoCourse')
-  DivText.classList.add('descriptionCourse')
+    // adicionando a descrição do componente
+    Name.textContent        = 'Nome:'
+    NameDesc.textContent    = name
+    Desc.textContent      = 'Descrição:'
+    DescDesc.textContent  = description
 
-  // adicionando a descrição do componente
-  Course.textContent        = 'Curso:'
-  CourseDesc.textContent    = name
-  Duration.textContent      = 'Duração:'
-  DurationDesc.textContent  = time + 'h'
+    // organizando os componentes
+    Name.appendChild(NameDesc)
+    Desc.appendChild(DescDesc)
+    DivText.appendChild(Name)
+    DivText.appendChild(Desc)
+    logoImg.appendChild(imageLogo)
+    Container.appendChild(DivText)
+    Container.appendChild(logoImg)
 
-  // organizando os componentes
-  Course.appendChild(CourseDesc)
-  Duration.appendChild(DurationDesc)
-  DivText.appendChild(Course)
-  DivText.appendChild(Duration)
-  logoCourse.appendChild(imageLogo)
-  Container.appendChild(DivText)
-  Container.appendChild(logoCourse)
+    return Container  // retornando o componente
 
-  return Container  // retornando o componente
+  } else {
+    // criando elementos
+    const Container = document.createElement('div')
+    const imageLogo = document.createElement('img')
+    const DivText = document.createElement('div')
+    const Course = document.createElement('p')
+    const CourseDesc = document.createElement('p')
+    const Duration = document.createElement('p')
+    const DurationDesc = document.createElement('p')
+    const logoCourse = document.createElement('div')
+
+    // pegando cor do logo de cada curso
+    await fetch(`https://www.alura.com.br/assets/api/cursos/${slug}.svg`)
+      .then((response) => {
+        switch (response.status) {
+          case 200:
+            return response.text();
+        }
+      })
+      .then((template) => {
+        const parser = new DOMParser(); // cria uma dom propria para o elemento
+        const doc = parser.parseFromString(template, 'text/html'); // manda o elemento para a DOM criada
+        const svgElm = doc.querySelector('svg'); // pega o icone dentro da DOM
+        let getPath = svgElm.querySelector('path[fill]') // paga o elemento path que contenha um fill
+        let getPathNNone = svgElm.querySelectorAll('path[fill]')[2]
+        let color; // seta a variavel de cor
+
+        // verificações
+        if (getPath?.attributes[0].nodeValue === 'none') {
+          color = getPathNNone?.attributes[0].nodeValue
+
+        } else if (getPath?.attributes[0].nodeName !== 'fill' ||
+          getPath?.attributes[0].nodeValue === '#031326'
+        ) {
+          color = getPath?.attributes[1].nodeValue // pega a cor desse icone
+
+        } else {
+          color = getPath?.attributes[0].nodeValue // pega a cor desse icone
+        }
+
+        if (!color?.includes('#')) {
+          color = 'rgb(var(--Pink))'
+        }
+
+        // seta o background do componente de acordo com a cor recebida
+        if (window.innerWidth >= 464) {
+          Container.style.background = `linear-gradient(300.31deg, ${color} 39.38%, rgb(var(--BackgroundComponents)) 39.38%)`
+        } else {
+          Container.style.background = `linear-gradient(0deg, ${color} 21%, rgb(var(--BackgroundComponents)) 21%)`
+        }
+      })
+    // adicionando a logo do curso
+    imageLogo.setAttribute('src', `https://www.alura.com.br/assets/api/cursos/${slug}.svg`)
+
+    // adicionando classes e id para facilitar o controle do componente
+    Container.classList.add('CardCp')
+    Container.id = slug
+    Course.classList.add('bold')
+    Duration.classList.add('bold')
+    logoCourse.classList.add('logoCourse')
+    DivText.classList.add('descriptionCourse')
+
+    // adicionando a descrição do componente
+    Course.textContent        = 'Curso:'
+    CourseDesc.textContent    = name
+    Duration.textContent      = 'Duração:'
+    DurationDesc.textContent  = description + 'h'
+
+    // organizando os componentes
+    Course.appendChild(CourseDesc)
+    Duration.appendChild(DurationDesc)
+    DivText.appendChild(Course)
+    DivText.appendChild(Duration)
+    logoCourse.appendChild(imageLogo)
+    Container.appendChild(DivText)
+    Container.appendChild(logoCourse)
+
+    return Container  // retornando o componente
+  }
 }
 
 const Courses: React.FC = () => {
   // estados
   const [courseSection, getCourseSection] = useState(null)
-  const [keyWord, setKeyWord] = useState(null)
 
   // rota / url
   const router = useRouter()
 
   // variáveis de pesquisa
+  let keyWord       = '';
   let allCourses    = [];
-  let allCSearched  = []
+  let allCSearched  = [];
   let allCFiltered  = [];
 
   // integração com a api da Alura
@@ -109,10 +169,10 @@ const Courses: React.FC = () => {
     var input = document.getElementById("searchElm") as HTMLInputElement;
 
     input.addEventListener("keydown", (event) => {
-      setKeyWord(input.value.toLowerCase()) // armazenando pesquisa
-
       if (event.key === "Enter") {
-        searchedCourse(keyWord);
+        if (divC.children.length === 0) {
+          searchedCourse(keyWord);
+        }
       }
     })
   })
@@ -123,12 +183,34 @@ const Courses: React.FC = () => {
       allCFiltered.map(async (course) => {
         if (course.nome.toLowerCase().includes(keyWord)) {
           // criando o componente card
-          const elmCard = await createCardCp(course.nome, course.slug, course.tempo_estimado)
+          const elmCard = await createCardCp(course.nome, course.slug, course.tempo_estimado, false, null)
           return courseSection.appendChild(elmCard) // enviando os cards como resposta ao cliente
         }
       })
+
+      if (keyWord === 'gbrogio') {
+        const elmCard = await createCardCp(
+          'Guilherme Brogio Macedo da Silva',
+          'https://github.com/gbrogio',
+          'Desenvolvedor Front End em React, NextJs',
+          true,
+          'https://avatars.githubusercontent.com/u/79169549?v=4'
+        )
+
+        return courseSection.appendChild(elmCard) // enviando os cards como resposta ao cliente
+      }
+      if (keyWord === 'alura') {
+        const elmCard = await createCardCp(
+          'Alura',
+          'https://alura.com',
+          'Plataforma de Cursos Online',
+          true,
+          'https://www.alura.com.br/assets/favicon.1636535197.ico'
+        )
+
+        return courseSection.appendChild(elmCard) // enviando os cards como resposta ao cliente
+      }
     }
-    setKeyWord('')
   }
 
   return (
@@ -137,12 +219,13 @@ const Courses: React.FC = () => {
       <Main>
         <section className="courses">
           <InputCp
-            inputType="text"
+            inputType="search"
             textOptions={{
               iD: "searchElm",
               placeholder: "coloque o nome do curso aqui...",
-              onChange: () => {
+              onChange: (evn) => {
                 courseSection.innerText = ""; // preparando o terreno
+                keyWord = evn.target.value.toLowerCase()
               },
               error: 'alertFunc',
               hasIcon: 'search'
@@ -152,6 +235,7 @@ const Courses: React.FC = () => {
 
           </div>
         </section>
+        <div className="padding"></div>
       </Main>
     </>
   );

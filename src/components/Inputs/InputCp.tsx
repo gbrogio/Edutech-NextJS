@@ -6,7 +6,7 @@ import { Container, Input } from './styleInputs';
 
 // propriedades
 export interface inputProps {
-  inputType: 'text' | 'select';
+  inputType: 'text' | 'select' | 'search';
   textOptions?: {
     iD: string;
     onChange: (ev: any) => void;
@@ -22,15 +22,17 @@ const InputCp: React.FC<inputProps> = ({
 }) => {
   return (
     <Container>
-      {inputType ? <>
-        <Input
-          type={inputType}
-          id={textOptions.iD}
-          onChange={textOptions.onChange}
-          placeholder={textOptions.placeholder}
-        />
-        <SearchIcon />
-      </> : <></>}
+      {inputType === 'search' ? <>
+        <div className="searchBar">
+          <Input
+            type={inputType}
+            id={textOptions.iD}
+            onChange={textOptions.onChange}
+            placeholder={textOptions.placeholder}
+          />
+          <SearchIcon />
+        </div>
+      </>: <></>}
 
     </Container>
   );

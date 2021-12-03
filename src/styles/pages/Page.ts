@@ -7,6 +7,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 
   /* Home - seções */
   .aboutEdutech {
@@ -62,17 +63,19 @@ export const Main = styled.main`
   .courses {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 130px;
+    align-items: center;
+    margin-top: calc(130px + 3.5rem);
     width: calc(100vw - 1rem);
 
     > div {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     @media screen and (max-width: 940px) {
-      margin-top: calc(130px + 2rem);
+      margin-top: calc(130px + 6.5rem);
+      width: calc(100vw - .5rem);
     }
   }
 

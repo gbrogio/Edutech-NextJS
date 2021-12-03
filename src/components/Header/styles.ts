@@ -17,6 +17,10 @@ export const Container = styled.header`
 
     height: 100%;
     padding: 0 calc(1rem + 2px) 0 0;
+    nav.linkContainer {
+      position: relative;
+      right: -28.17px;
+    }
   }
 
   div.bottomHeader {
@@ -132,11 +136,16 @@ export const Container = styled.header`
   }
   @media screen and (max-width: 450px) {
     div.signZone {
-      display: none;
+      margin-left: 1rem;
+    }
+    div.group {
+      display: flex;
+      justify-content: flex-start;
     }
 
-    nav.linkContainer {
+    nav.linkContainer, div.group {
       overflow-x: scroll;
+      overflow-y: hidden;
       white-space: nowrap;
     }
   }
