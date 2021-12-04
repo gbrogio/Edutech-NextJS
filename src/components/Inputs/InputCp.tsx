@@ -41,8 +41,10 @@ const InputCp: React.FC<inputProps> = ({
             id={textOptions.iD}
             onChange={textOptions.onChange}
             placeholder={textOptions.placeholder}
+            aria-required="true"
+            required
           />
-          <SearchIcon />
+          <SearchIcon aria-label="pesquisar" role="button" tabIndex={0} id="searchBtnSvg"/>
         </div>
       </>: <></>}
 

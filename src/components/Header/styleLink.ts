@@ -22,6 +22,11 @@ export const Container = styled.a`
       transform: translate(-85.5%, -1px)!important;
     }
   }
+  &[data-lid="about"] {
+    ::after {
+      transform: translate(-82%, -1px)!important;
+    }
+  }
   &.activeLink {
     opacity: .8;
     ::after {

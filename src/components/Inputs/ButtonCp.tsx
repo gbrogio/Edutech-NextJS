@@ -9,6 +9,8 @@ import { Container } from './styleButton';
 // propriedades
 export interface propsBtn {
   tabIndex?: number;
+  onClick?: () => void;
+  style?: object;
   typeProps?: {
     meth?: 'sign' | 'button' | 'submit';
     fill?: boolean;
@@ -23,7 +25,7 @@ export interface propsBtn {
 
 // componente
 const ButtonCp: React.FC<propsBtn> = ({
-  hRef, ariaLabel, tabIndex, typeProps, children, background //  recebendo propriedades
+  hRef, style, onClick, ariaLabel, tabIndex, typeProps, children, background //  recebendo propriedades
 }) => {
   const { signInGoogle, signOut, deleteAccount } = useAuth();
   const router = useRouter(); // criando constancia de rota/navegação entre paginas.
@@ -37,11 +39,12 @@ const ButtonCp: React.FC<propsBtn> = ({
         provider: typeProps.provider,
         borderRadius: typeProps.borderRadius,
       }}
+      style={style}
       background={background}
-      tabIndex={tabIndex}
+      tabIndex={tabIndex ? tabIndex : -1}
       aria-label={ariaLabel}
       className={typeProps.provider ? 'signBtn' : ''} // seta a classe referente a typeProps.provider, se o valor existir adicione "signBtn", caso contrário não adicione.
-      onClick={() => (typeProps.provider === 'google' ? signInGoogle() : typeProps.provider === 'out' ? signOut() : typeProps.provider === 'delete' ? deleteAccount() : {})} // caso houver click enviar para "/hRef".
+      onClick={typeProps.provider ? () => (typeProps.provider === 'google' ? signInGoogle() : typeProps.provider === 'out' ? signOut() : typeProps.provider === 'delete' ? deleteAccount() : {}) : onClick} // caso houver click enviar para "/hRef".
     >
       {typeProps.provider === 'google' && (
         <>

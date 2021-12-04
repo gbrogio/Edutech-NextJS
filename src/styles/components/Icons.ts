@@ -5,6 +5,9 @@ import { BookInformation } from '@styled-icons/fluentui-system-filled/BookInform
 import { Trash } from '@styled-icons/boxicons-regular/Trash'
 import { LogOut } from '@styled-icons/ionicons-outline/LogOut'
 import { Search } from '@styled-icons/material-outlined/Search'
+import { Close } from '@styled-icons/evaicons-solid/Close'
+import { Accessibility } from '@styled-icons/ionicons-solid/Accessibility'
+import { Contrast } from '@styled-icons/foundation/Contrast'
 import Google from '../../assets/svg/google.svg';
 
 export const ArrowDown = styled(ArrowIosDownward)`
@@ -43,3 +46,35 @@ export const SearchIcon = styled(Search)`
     fill: rgb(var(--Stroke), 1);
   }
 `
+export const CloseIcon = styled(Close)`
+  width: 45px;
+  height: 45px;
+  padding: .5rem;
+  border-radius: 50%;
+  :hover {
+    background: rgb(var(--Stroke), .1);
+  }
+`
+export const InvalidIcon = styled.span`
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--Orange));
+  border: 2px dashed rgb(var(--Orange));
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  ::after {
+    content: '!'
+  }
+`;
+export const AccessibilityIcon = styled(Accessibility)`
+  fill: var(--BackgroundPages);
+  width: 30px;
+  height: 30px;
+`;
+export const ContrastIcon = styled(Contrast)`
+  width: 25px;
+  height: 25px;
+`;

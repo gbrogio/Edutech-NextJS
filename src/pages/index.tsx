@@ -1,16 +1,13 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
-import Header from 'components/Header';
+import LayoutCp from 'components/Layout';
 
 import { Title, Paragraph, LinkA } from 'style-components/Text';
-import { Main } from 'styles/pages/Page'
 
 const Home: React.FC = () => {
   return (
     <>
-      <Header />
-
-      <Main>
+      <LayoutCp>
         <section className="aboutEdutech">
           <div>
             <Title
@@ -30,7 +27,9 @@ const Home: React.FC = () => {
               ou a sua comunidade como um todo.
             </Paragraph>
           </div>
-          <img src="/edutech.jpg" alt="Logomarca do programa EDUTECH"/>
+          <img src="/edutech.jpg" alt="
+            Logomarca do programa EDUTECH: uma esfera central com artefatos ao redor.
+          "/>
         </section>
         <span className="line"/>
         <section className="trails">
@@ -196,7 +195,7 @@ const Home: React.FC = () => {
             </LinkA>
           </Paragraph>
         </section>
-      </Main>
+      </LayoutCp>
     </>
   );
 };

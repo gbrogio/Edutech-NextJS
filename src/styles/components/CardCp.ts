@@ -11,9 +11,9 @@ export const CardCp = createGlobalStyle`
     border-radius: 10px;
     max-width: 400px;
     min-width: 260px;
-    height: 200px;
+    height: auto;
     padding: 1.5rem 10rem 0 2rem;
-    margin: 1.5rem;
+    margin: 1rem;
     transition: .2s ease-in-out;
 
     p {
@@ -25,7 +25,7 @@ export const CardCp = createGlobalStyle`
         font-weight: 400;
       }
     }
-    .logoCourse {
+    .logoImg {
       position: absolute;
       bottom: 1rem;
       right: 2rem;
@@ -44,7 +44,7 @@ export const CardCp = createGlobalStyle`
 
       height: 17rem;
       padding: 1.5rem 2rem 0 2rem;
-      .descriptionCourse {
+      .descText {
         display: flex;
         flex-direction: column;
       }

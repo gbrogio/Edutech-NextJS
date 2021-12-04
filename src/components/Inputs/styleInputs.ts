@@ -25,6 +25,7 @@ export const Input = styled.input`
   background-color: rgb(var(--BackgroundComponents));
   border: 1px solid rgb(var(--Stroke));
   box-shadow: 2px 4px 4px var(--Shadow);
+  color: var(--Text);
 
   padding: 1rem;
   min-width: 260px;
@@ -38,7 +39,7 @@ export const Select = styled.select`
   background-color: rgb(var(--BackgroundComponents));
   border: 1px solid rgb(var(--Stroke));
   box-shadow: 2px 4px 4px var(--Shadow);
-
+  color: var(--Text);
   padding: 1rem;
   min-width: 260px;
   border-radius: 10px;

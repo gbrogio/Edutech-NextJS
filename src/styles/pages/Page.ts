@@ -6,14 +6,12 @@ export const Main = styled.main`
   padding: 0 10rem 0 10rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
 
   /* Home - seções */
   .aboutEdutech {
     display: flex;
     align-items: center;
-
 
     img {
       margin-left: 10%
@@ -38,11 +36,6 @@ export const Main = styled.main`
     }
   }
   .trails {
-    @media screen and (max-width: 1020px) {
-      @media screen and (min-width: 366px) {
-        width: calc(100vw - 2rem);
-      }
-    }
   }
   .alura {
     @media screen and (max-width: 1060px) {
@@ -50,12 +43,6 @@ export const Main = styled.main`
       flex-direction: column;
       text-align: center;
       align-items: center;
-
-      @media screen and (max-width: 1020px) {
-        @media screen and (min-width: 366px) {
-          width: calc(100vw - 2rem);
-        }
-      }
     }
   }
 
@@ -65,9 +52,9 @@ export const Main = styled.main`
     flex-direction: column;
     align-items: center;
     margin-top: calc(130px + 3.5rem);
-    width: calc(100vw - 1rem);
 
     > div#courses {
+      width: calc(100vw - .5rem);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -75,31 +62,104 @@ export const Main = styled.main`
 
     @media screen and (max-width: 940px) {
       margin-top: calc(130px + 6.5rem);
-      width: calc(100vw - .5rem);
     }
   }
 
+  /* About - seções*/
+  .titleRead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(130px + 3.5rem);
+    > div {
+      margin-top: 1rem;
+    }
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+
+      > div {
+        > h1 {
+          white-space: normal!important;
+          display: inline;
+          ::before {
+            display: inline-block;
+            transform: translateY(4px);
+          }
+        }
+      }
+    }
+  }
+
+  div.badge {
+    text-align: center;
+    img {
+      margin: 0 .5rem;
+    }
+    @media screen and (max-width: 365px) {
+      text-align: justify;
+      transform: translateX(-.8rem)
+    }
+  }
+  .tableContainer {
+    align-items: flex-start;
+  }
+  .featuresRead {
+    li {
+      list-style: none;
+    }
+  }
+  .contactRead {
+    > p.authorInfo {
+      display: flex;
+
+      > :last-child {
+        background: rgb(var(--Blue), .8);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        transform: translateX(-2rem);
+        border: 2px solid rgb(var(--Blue), .7);
+
+        :hover {
+          zoom: 1.1;
+        }
+      }
+    }
+  }
+  .table {
+    margin: 0 2rem;
+    opacity: .8;
+  }
+
   .line {
-    margin: 2rem 0 4rem 0;
+    margin: 2rem 0;
     display: flex;
     justify-content: center;
     background-color: rgb(var(--Stroke));
 
-    width: calc(100vw - 50%);
     opacity: .7;
     height: 1px;
   }
 
-  @media screen and (max-width: 365px) {
-    padding: 0 .5rem 0 .5rem;
+  @media screen and (max-width: 830px) {
+    padding: 0 2rem;
 
-    .aboutEdutech {
-      img {
-        width: 90%;
+    @media screen and (max-width: 365px) {
+      p.paragraph {
+        text-align: justify;
       }
-    }
-    .line {
-      width: calc(99%);
+      padding: 0 .5rem;
+      .aboutEdutech {
+        img {
+          width: 90%;
+        }
+      }
+      .line {
+        width: calc(99%);
+      }
     }
   }
 `;

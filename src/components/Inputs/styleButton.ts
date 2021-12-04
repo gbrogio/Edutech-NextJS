@@ -33,6 +33,6 @@ export const Container = styled.button`
   }
 
   :hover {
-    opacity: 1;
+    opacity: 1!important;
   }
 `;

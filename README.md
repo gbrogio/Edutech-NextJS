@@ -25,8 +25,8 @@
 - [📦 Clonar / Instalar](#ClonarInstalar)
 - [🔨 Como usar](#Editar)
   - [✏️ Editar](#Editar)
-  - [🔨 Mapa das Pastas](#Mapa)
-- [⚒ Tecnologias](#Tecnologias)
+  - [🗺️ Mapa das Pastas](#Mapa)
+- [⚒️ Tecnologias](#Tecnologias)
 - [👤 Contato](#Autor)
 
 <h1 id="Recursos">✨ Features</h1>
@@ -79,12 +79,12 @@ dentro das pastas dos componentes com a nomenclatura **style[Componente].ts**.
 obs: Ao mexer com a responsividade da pagina, isto é seu tamanho, você deverá atualizar a pagina para
 continuar com a experiencia
 
-# <h1 id="Mapa">🔨 Mapa das Pastas</h1>
+# <h1 id="Mapa">🗺️ Mapa das Pastas</h1>
   ```bash
     Nothing for here...
   ```
 
-# <h1 id="Tecnologias">⚒ Tecnologias</h1>
+# <h1 id="Tecnologias">⚒️ Tecnologias</h1>
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
@@ -92,19 +92,19 @@ continuar com a experiencia
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-Onde o TypeScript, foi a tecnologia utiliza para a construção do código;
-Onde o React, foi a tecnologia utilizada para a construção dos componentes e paginas;
-Onde o Next.JS, foi a tecnologia utilizada para a renderização dos códigos feitos em React;
-Onde o Styled Components, foi a tecnologia utilizada para a estilização da pagina (CSS em JavaScript);
-Onde o Firebase, foi a tecnologia utilizada para a autenticação e metodos de login da pagina;
-Onde o NodeJS, foi a tecnologia utilizada para manter o Next.JS e outros.
+Onde o TypeScript, foi a tecnologia utiliza para a construção do código; <br>
+Onde o React, foi a tecnologia utilizada para a construção dos componentes e paginas;<br>
+Onde o Next.JS, foi a tecnologia utilizada para a renderização dos códigos feitos em React;<br>
+Onde o Styled Components, foi a tecnologia utilizada para a estilização da pagina (CSS em JavaScript);<br>
+Onde o Firebase, foi a tecnologia utilizada para a autenticação e metodos de login da pagina;<br>
+Onde o NodeJS, foi a tecnologia utilizada para manter o Next.JS e outros.<br>
 
 <h1 id="Autor">👤 Contato</h1>
 
 <a href="https://github.com/gbrogio">
  <img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/79169549?s=400&u=b290516661edf038794521fe542f92d74eccb2b8&v=4" width="100" alt=""/>
  <br />
- <sub><b>Guilherme Brogio</b></sub></a> <a href="https://app.rocketseat.com.br/me/gbrogio" title="GBrogio">🚀</a>
+ <sub><b>Guilherme Brogio</b></sub></a> <a href="https://cursos.alura.com.br/user/gbrogio" title="GBrogio">🚀</a>
 
 Feito de 💜 por Guilherme Brogio <br>
 Manda um "oi!"👋🏽 lá no nosso [server do discord](https://discord.gg/ANAWECH3UP)!

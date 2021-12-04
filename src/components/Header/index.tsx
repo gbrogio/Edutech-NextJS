@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import {Nav, navLeft} from './Nav'
 
 // estilos e icones
-import { Hamburger, BookInfo } from 'styles/components/Icons';
+import { Hamburger, BookInfo, CloseIcon } from 'styles/components/Icons';
 import LinkCp from './LinkCp';
 import LogoCp from './LogoCp';
 import UserCp from './UserCp';
@@ -23,6 +23,7 @@ const Header: React.FC = () => {
   const [isNav, setNav] = useState(false);
   const [isWidth, setWidth] = useState(0);
   const [isIndex, setIndex] = useState(-1);
+  const [main, getMain] = useState(null);
 
   // navegação
   const router = useRouter();
@@ -45,6 +46,8 @@ const Header: React.FC = () => {
     const labelMenu = document.getElementById('labelBtn') as HTMLLabelElement;
     const navLeft = document.getElementById('menuLeft');
     const BlurElm = document.querySelectorAll('#blurElm');
+    const Content = document.getElementById('Content');
+    getMain(Content)
 
     // evento de tecla pressionada
     document.addEventListener('keydown', (e) => {
@@ -61,7 +64,12 @@ const Header: React.FC = () => {
 
     if (!isNav) { //  se a navegação esquerda for falsa
       buttonMenu.checked = false; // Retire o menu
-      labelMenu.focus(); // coloque o foco no ultimo elemento clicado
+
+      if (Content.tabIndex === 0) {
+        Content.focus() // colocando o foco depois da header
+      } else {
+        labelMenu.focus(); // coloque o foco no ultimo elemento clicado
+      }
       navLeft.style.visibility = 'hidden' // desabilite o menu
 
       // ativa o foco do elemento
@@ -83,118 +91,136 @@ const Header: React.FC = () => {
   });
 
   return (
-    <Container role="none" tabIndex={9} aria-label="Cabeçalho Navegação">
-      <div className="group">
-        <section className="navLeftContainer">
-          <input type="checkbox" id="menuBtn" />
+    <>
+      <Container id="Header" role="none" tabIndex={9} aria-label="Cabeçalho Navegação">
+        <div className="group">
+          <section className="navLeftContainer">
+            <input type="checkbox" id="menuBtn" />
 
-          <section
-            aria-label="Navegação Esquerda"
-            role="menu"
-            tabIndex={isIndex}
-            className="menuLeft"
-            id="menuLeft"
-          >
+            <section
+              aria-label="Navegação Esquerda"
+              role="menu"
+              tabIndex={isIndex}
+              className="menuLeft"
+              id="menuLeft"
+            >
+              <span className="closeNav"
+              role="button"
+              tabIndex={isIndex}
+              aria-label="Fechar Navegação Esquerda"
+              onClick={() => {
+                setNav(false)
+              }}>
+                <CloseIcon />
+              </span>
+              <div>
+                <LinkCp
+                  tabIndex={isIndex}
+                  hRef="/about"
+                  iD={{
+                    get: 'linkLeft',
+                    lid: 'about',
+                  }}
+                  isActive={
+                    router.pathname === '/about'
+                  }
+                  isInternal={
+                    router.pathname === '/about'
+                  }
+                >
+                  <BookInfo style={{ marginRight: '1rem' }} />
+                  Sobre o Site
+                </LinkCp>
+              </div>
+
+              <span className="Line"/>
+
+              <div>
+                <p
+                  aria-label="escolha sua série:"
+                  tabIndex={isIndex}
+                >
+                  Filtrar por Serie
+
+                </p>
+
+                {navLeft(isIndex, LinkCp)}
+              </div>
+            </section>
+
+            <div
+              style={{display: isNav ? 'flex' : 'none'}}
+              aria-hidden="true"
+              className="overlay"
+              onClick={() => {
+                setNav(false);
+              }}
+            />
+
             <div>
-              <LinkCp
-                tabIndex={isIndex}
-                hRef="/about"
-                iD={{
-                  get: 'linkLeft',
-                  lid: 'about',
+              <label
+                tabIndex={8}
+                aria-label={`Botão Menu Esquerdo ${isNav ? 'Status: Aberto, pressione "Escape" para sair' : 'Status Fechado'}`}
+                id="labelBtn"
+                aria-hidden="true"
+                onClick={() => {
+                  setNav(true);
                 }}
-                isActive={
-                  router.pathname === '/about'
-                }
-                isInternal={
-                  router.pathname === '/about'
-                }
               >
-                <BookInfo style={{ marginRight: '1rem' }} />
-                Sobre o Site
-              </LinkCp>
-            </div>
+                <Hamburger />
+              </label>
+              <div className="invisible">
+                <button tabIndex={8} onClick={() => {
+                  main.tabIndex = 0
+                  setNav(false);
+                  main.focus() // colocando o foco depois da header
+                }}>Pular Cabeçalho e ir para o conteudo principal</button>
+              </div>
 
-            <span className="Line"/>
-
-            <div>
-              <p
-                aria-label="escolha sua série:"
-                tabIndex={isIndex}
+              <section
+                tabIndex={8}
+                role="none"
+                className="Edutech"
+                aria-label="Nome do Site: Edutech - 2021, Paraná, Brasil"
               >
-                Filtrar por Serie
-
-              </p>
-
-              {navLeft(isIndex, LinkCp)}
+                <p>
+                  <strong>EDU</strong>
+                  TECH - 2021
+                </p>
+                <p className="opacity">Paraná, Brasil</p>
+              </section>
             </div>
           </section>
 
-          <div
-            style={{display: isNav ? 'flex' : 'none'}}
-            aria-hidden="true"
-            className="overlay"
-            onClick={() => {
-              setNav(false);
-            }}
-          />
+          {isWidth >= 840 && Nav(router.pathname, LinkCp, 8)}
 
-          <div>
-            <label
-              tabIndex={9}
-              aria-label={`Botão Menu Esquerdo ${isNav ? 'Status: Aberto, pressione "Escape" para sair' : 'Status Fechado'}`}
-              id="labelBtn"
-              aria-hidden="true"
-              onClick={() => {
-                setNav(true);
-              }}
-            >
-              <Hamburger />
-            </label>
+          {isUser ? (
+            <div className="userZone">
+              <UserCp
+                isWidth={isWidth}
+                photo={isUser.photo}
+                domain={isUser.email}
+                >{isUser.name}
+              </UserCp>
+            </div>
+          ) : (
+            <div className="signZone">
+              <ButtonCp
+                tabIndex={8}
+                typeProps={{
+                  meth: 'sign',
+                  provider: 'google',
+                }}
+              >
+                Entrar com Google
+              </ButtonCp>
+            </div>
+          )}
+        </div>
 
-            <section
-              tabIndex={9}
-              role="none"
-              className="Edutech"
-              aria-label="Nome do Site: Edutech - 2021, Paraná, Brasil"
-            >
-              <p>
-                <strong>EDU</strong>
-                TECH - 2021
-              </p>
-              <p className="opacity">Paraná, Brasil</p>
-            </section>
-          </div>
-        </section>
-
-        {isWidth >= 940 && Nav(router.pathname, LinkCp, 9)}
-
-        {isUser ? (
-          <div className="userZone">
-            <UserCp
-              isWidth={isWidth}
-              photo={isUser.photo}
-              domain={isUser.email}
-              >{isUser.name}
-            </UserCp>
-          </div>
-        ) : isWidth >= 450 && (
-          <div className="signZone">
-            <ButtonCp
-              tabIndex={9}
-              typeProps={{
-                meth: 'sign',
-                provider: 'google',
-              }}
-            >
-              Entrar com Google
-            </ButtonCp>
-          </div>
-        )}
-      </div>
-
-      {isWidth < 940 && <div className="bottomHeader">{Nav(router.pathname, LinkCp, 899)}</div>}
-    </Container>
+        {isWidth < 840 && <div className="bottomHeader">{Nav(router.pathname, LinkCp, 88)}</div>}
+      </Container>
+    </>
   );
 };
 {/* <LogoCp

@@ -63,6 +63,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=6+ano"
+      ariaLabel="1 de 7,"
       iD={{
         get: 'noUnder',
         lid: '6ano',
@@ -80,6 +81,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=7+ano"
+      ariaLabel="2 de 7,"
       iD={{
         get: 'noUnder',
         lid: '7ano',
@@ -97,6 +99,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=8+ano"
+      ariaLabel="3 de 7,"
       iD={{
         get: 'noUnder',
         lid: '8ano',
@@ -114,6 +117,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=9+ano"
+      ariaLabel="4 de 7,"
       iD={{
         get: 'noUnder',
         lid: '9ano',
@@ -131,6 +135,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=1+ano+ensino+medio"
+      ariaLabel="5 de 7,"
       iD={{
         get: 'noUnder',
         lid: '1anoEM',
@@ -148,6 +153,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=2+ano+ensino+medio"
+      ariaLabel="6 de 7,"
       iD={{
         get: 'noUnder',
         lid: '2anoEM',
@@ -164,7 +170,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
 
     <LinkCp
       tabIndex={verifyTabIndex}
-      ariaLabel="3º ano - Ensino Médio - Ultimo Link. Pressione escape para sair"
+      ariaLabel="7 de 7,"
       hRef="/courses?=3+ano+ensino+medio"
       iD={{
         get: 'noUnder',

@@ -1,8 +1,9 @@
 // Konami Code (adiciona easter egg no site)
-export const KonamiCode = (modalActive) => {
+export const KonamiCode = (keyCode, Func, extra) => {
   let allowKeys = []; // teclas pressionadas
-  const konamiCode = 'edutech'; // palavra chave
+  const konamiCode = keyCode; // palavra chave
   let tempClear; // limpando "allowKeys"
+
 
   document.addEventListener('keydown', (e) => {
     clearTimeout(tempClear); // limpando "allowKeys"
@@ -13,7 +14,7 @@ export const KonamiCode = (modalActive) => {
     const allowedKeys = allowKeys.join(''); // pegando teclas
 
     if (allowedKeys.includes(konamiCode)) { // verificando se foi digitado a sequencia correta
-      modalActive(true); // ativando Easter Egg
+      Func(); // ativando Easter Egg
     }
 
     // limpando "allowKeys"

@@ -2,21 +2,19 @@ import { createGlobalStyle } from 'styled-components';
 
 export const Colors = createGlobalStyle`
   :root{
-    --BackgroundPages: #F7F7F7;
-    --BackgroundBtn: #F2F2F2;
-    --Text: #212121;
+    --BackgroundPages: ${(props) => props.theme.colors.BackgroundPages};
+    --BackgroundBtn: ${(props) => props.theme.colors.BackgroundBtn};
+    --Text: ${(props) => props.theme.colors.Text};
 
-    --Hover: rgba(0, 0, 0, 0.04);
-    --Shadow: rgb(0, 0, 0, .2);
+    --Hover: ${(props) => props.theme.colors.Hover};
+    --Shadow: ${(props) => props.theme.colors.Shadow};
 
-    --Green: 0, 166, 81; //     rgb(000, 166, 081)
-    --Primary: 155, 81, 224; // rgb(155, 081, 224)
-    --Pink: 187, 107, 217; //   rgb(187, 107, 217)
-    --Orange: 242, 153, 074; // rgb(242, 153, 074)
-    --Blue: 0, 120, 193; //     rgb(000, 120, 193)
+    --Green: ${(props) => props.theme.colors.Green}; //     rgb(000, 166, 081)
+    --Orange: ${(props) => props.theme.colors.Orange}; // rgb(242, 153, 074)
+    --Blue: ${(props) => props.theme.colors.Blue}; //     rgb(000, 120, 193)
 
-    --Gray: 051, 051, 051; //  rgb(051, 051, 051)
-    --Stroke: 130, 130, 130; // rgb(130, 130, 130)
-    --BackgroundComponents: 255, 255, 255; // rgb(255, 255, 255)
+    --Gray: ${(props) => props.theme.colors.Gray}; //  rgb(051, 051, 051)
+    --Stroke: ${(props) => props.theme.colors.Stroke}; // rgb(130, 130, 130)
+    --BackgroundComponents: ${(props) => props.theme.colors.BackgroundComponents}; // rgb(255, 255, 255)
   }
 `;

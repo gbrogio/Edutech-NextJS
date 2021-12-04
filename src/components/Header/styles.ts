@@ -60,6 +60,17 @@ export const Container = styled.header`
       box-shadow: 0px 15px 20px 3px var(--Shadow);
       border-radius: 0px 0px 5px 0px;
 
+      span.closeNav {
+        z-index: 900;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        cursor: pointer;
+        @media screen and (max-width: 320px) {
+          left: 70vw;
+        }
+      }
+
       .Line {
         position: absolute;
         background: rgb(var(--Stroke),.7);

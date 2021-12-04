@@ -26,7 +26,7 @@ const LinkCp: React.FC<props> = ({
   return (
     <Container
       tabIndex={tabIndex}
-      aria-label={isActive ? children + ', status: ativo' : isActive === false ? children + ', status: desativado' : ariaLabel}
+      aria-label={isActive ? ariaLabel + ' ' + children + ', status: ativo' : isActive === false ? ariaLabel + ' ' + children + ', status: desativado' : ariaLabel}
       onClick={() => {
         router.push(hRef).then(() => {
           router.reload()

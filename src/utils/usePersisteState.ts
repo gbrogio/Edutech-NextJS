@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { setCookie, parseCookies } from 'nookies';
 
-function usePersistedState(key: any, initialState: any) {
+function usePersistedState(key: any, value: any, initialState: any) {
   const [state, setState] = useState(() => {
-    const cookieValue = parseCookies().USER_THEME;
+    const cookieValue = value;
     if (cookieValue) {
       return (cookieValue);
     }
