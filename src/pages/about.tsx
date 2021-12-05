@@ -118,7 +118,12 @@ const About: React.FC = () => {
               Link do Projeto (figma):
             ">
               Link do Projeto: <LinkA href="https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3">Figma</LinkA>
-            </p>
+            </p> <br/>
+            <p style={{marginTop: '6px'}} aria-label="
+              Link do Projeto (figma):
+            ">
+              Link do Site: <LinkA href="https://www.edutech-gbrogio.vercel.app">edutech-gbrogio.vercel.app</LinkA>
+            </p> <br/>
             <p style={{marginTop: '6px'}} aria-label="
               observação: Infelizmente, até o momento, na busca por séries apenas a opção
               primeiro ano Ensino Médio está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.

@@ -47,8 +47,9 @@
   se na pagina de cursos voce digitar "gbrogio" ou "alura" você vai habilitar cards secretos. <br>
   <br>
 </p>
-Link do Projeto:
-![Figma](https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3)
+
+Link do Projeto: [Figma](https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3) <br>
+Link do Site: [edutech-gbrogio.vercel.app](https://www.edutech-gbrogio.vercel.app)
 
 obs: Infelizmente, até o momento, na busca por séries apenas a opção
 "1° ano Ensino Médio" está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
