@@ -44,7 +44,7 @@ const About: React.FC = () => {
           <div className="badge" tabIndex={0} aria-label="informações sobre o projeto">
             <img alt="Linguagens Utilizadas no projeto: 2" role="group" tabIndex={0} src="https://img.shields.io/github/languages/count/gbrogio/Edutech-NextJS?color=34A853&label=Linguagens&style=for-the-badge"/>
 
-            <img alt="Tamanho do repositório: 193 kilobyte" role="group" tabIndex={0} src="https://img.shields.io/github/repo-size/gbrogio/Edutech-NextJS?color=34A853&label=Tamanho%20do%20Reposit%C3%B3rio&style=for-the-badge"/>
+            <img alt="Tamanho do repositório: 365 kilobyte" role="group" tabIndex={0} src="https://img.shields.io/github/repo-size/gbrogio/Edutech-NextJS?color=34A853&label=Tamanho%20do%20Reposit%C3%B3rio&style=for-the-badge"/>
 
             <LinkA href="https://github.com/gbrogio"tabIndex={0}>
               <img alt="Feito por Guilherme Brogio" src="https://img.shields.io/badge/feito%20por-GBrogio-4285F4?style=for-the-badge"/>
