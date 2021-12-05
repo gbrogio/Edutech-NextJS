@@ -4,7 +4,6 @@ export const KonamiCode = (keyCode, Func, extra) => {
   const konamiCode = keyCode; // palavra chave
   let tempClear; // limpando "allowKeys"
 
-
   document.addEventListener('keydown', (e) => {
     clearTimeout(tempClear); // limpando "allowKeys"
     const keyPress = e.key; //  pga a tecla pressionada

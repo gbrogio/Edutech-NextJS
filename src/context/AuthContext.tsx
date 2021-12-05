@@ -1,16 +1,14 @@
+/* eslint react/prop-types: "off" */
 // Metodos de Login
-
 // Importações das dependencias necessárias
 import { createContext, useEffect, useState } from 'react';
 import { setCookie, destroyCookie } from 'nookies';
 
+import { User } from '@firebase/auth';
 import { authParams } from '../lib/firebase';
-import {  UserCredential, User } from '@firebase/auth';
-
 
 // criando contexto
 const AuthContext = createContext(null);
-
 
 // criando formato de usuário
 const formatUser = (user: User) => ({
@@ -83,7 +81,10 @@ export const AuthProvider = function ({ children }) {
   const deleteAccount = () => {
     try {
       setLoading(true);
-      authParams.deleteProv.reauthenticateWithCredential(authParams.auth.currentUser, new authParams.deleteProv.AuthCredential)
+      authParams.deleteProv.reauthenticateWithCredential(
+        authParams.auth.currentUser,
+        new authParams.deleteProv.AuthCredential(),
+      );
       authParams.deleteUser(authParams.auth.currentUser).then(() => {
         destroyCookie(undefined, 'EDUTECH_GBROGIO_COOKIE');
       });
@@ -98,7 +99,6 @@ export const AuthProvider = function ({ children }) {
 
     return () => unSubscribe();
   }, []);
-
 
   // componente com os provedores
   return (

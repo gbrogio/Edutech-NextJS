@@ -1,11 +1,13 @@
+/* eslint react/react-in-jsx-scope: "off" */
+
 const slug = [
   '/',
   '/courses',
   '/about',
-]
+];
 
 export const Nav = (pathname, LinkCp, tab) => (
-  <nav className="linkContainer" tabIndex={tab} role="menu" style={{display: 'flex'}}>
+  <nav className="linkContainer" tabIndex={tab} role="menu" style={{ display: 'flex' }}>
     <LinkCp
       hRef={slug[0]}
       iD={{
@@ -58,7 +60,7 @@ export const Nav = (pathname, LinkCp, tab) => (
     </LinkCp>
   </nav>
 );
-export const navLeft = (verifyTabIndex, LinkCp) => (
+export const navLeft = (verifyTabIndex, LinkCp, router) => (
   <>
     {/* <LinkCp // Não foi possivel encontrar os cursos para as séries abaixo
       tabIndex={verifyTabIndex}
@@ -141,7 +143,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
         lid: '1anoEM',
       }}
       isActive={
-        false
+        router.asPath === '/courses?=1+ano+ensino+medio'
       }
       isInternal={
         false

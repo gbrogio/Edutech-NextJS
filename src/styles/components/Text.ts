@@ -58,4 +58,4 @@ export const Bash = styled.pre`
   background-color: rgb(var(--BackgroundComponents));
   border-radius: 10px;
   filter: drop-shadow(0px 4px 5px var(--Shadow));
-`
+`;

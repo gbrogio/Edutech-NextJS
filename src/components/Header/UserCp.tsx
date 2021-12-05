@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { ArrowDown } from 'styles/components/Icons';
-import { Dialog } from 'styles/components/Dialog'
+import { Dialog } from 'styles/components/Dialog';
 import { Container } from './stylesUser';
 import ButtonCp from '../Inputs/ButtonCp';
 
@@ -11,7 +11,7 @@ interface props {
   isWidth: number;
 }
 const UserCp: React.FC<props> = ({
-  photo, domain, children, isWidth
+  photo, domain, children, isWidth,
 }) => {
   // estados
   const [isModal, setModal] = useState(false);
@@ -22,7 +22,6 @@ const UserCp: React.FC<props> = ({
 
   // carregue quando o front-end estiver pronto
   useEffect(() => {
-
     // pega os elementos que fazem parte da modal usuario
     const modalDomain = document.getElementById('ModalUser');
     const UserButton = document.getElementById('UserButton');
@@ -43,12 +42,14 @@ const UserCp: React.FC<props> = ({
 
   return (
     <>
-      <Container id="UserButton" role="button" onClick={() => setModal(isModal ? false : true)} tabIndex={899}>
+      <Container id="UserButton" role="button" onClick={() => setModal(!isModal)} tabIndex={899}>
 
-        {isWidth >= 400 && <div className="userInfo">
+        {isWidth >= 400 && (
+        <div className="userInfo">
           <p className="userName" aria-label={`Usuário informações. Nome: ${children}.`}>{children}</p>
           <p className="userDomain" aria-label={`. Dominio: ${accessibleDomainFormatted}.`}>{domainFormatted}</p>
-        </div>}
+        </div>
+        )}
 
         <div className="userPhoto" role="menu">
           <img src={photo} alt="" />
@@ -57,15 +58,16 @@ const UserCp: React.FC<props> = ({
 
       </Container>
 
-      {isModal && <Dialog id="ModalUser" tabIndex={isModal ? 900 : -1} aria-label="Usuário - Modal" role="">
+      {isModal && (
+      <Dialog id="ModalUser" tabIndex={isModal ? 900 : -1} aria-label="Usuário - Modal">
         <ButtonCp
           tabIndex={isModal ? 900 : -1}
           typeProps={{
-            meth: "sign",
+            meth: 'sign',
             fill: false,
-            outline: "Bottom",
-            provider: "out",
-            borderRadius: "10px 10px 0 0",
+            outline: 'Bottom',
+            provider: 'out',
+            borderRadius: '10px 10px 0 0',
           }}
           background={null}
         >
@@ -74,18 +76,19 @@ const UserCp: React.FC<props> = ({
         <ButtonCp
           tabIndex={isModal ? 900 : -1}
           typeProps={{
-            meth: "sign",
+            meth: 'sign',
             fill: false,
-            outline: "Top",
-            provider: "delete",
-            borderRadius: "0 0 10px 10px",
+            outline: 'Top',
+            provider: 'delete',
+            borderRadius: '0 0 10px 10px',
           }}
           background={null}
           ariaLabel="Deletar Conta - ultimo item pressione escape para sair"
         >
           Deletar Conta
         </ButtonCp>
-      </Dialog>}
+      </Dialog>
+      )}
     </>
   );
 };

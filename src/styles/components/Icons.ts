@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { ArrowIosDownward } from '@styled-icons/evaicons-solid/ArrowIosDownward';
 import { Menu2Outline } from '@styled-icons/evaicons-outline/Menu2Outline';
 import { BookInformation } from '@styled-icons/fluentui-system-filled/BookInformation';
-import { Trash } from '@styled-icons/boxicons-regular/Trash'
-import { LogOut } from '@styled-icons/ionicons-outline/LogOut'
-import { Search } from '@styled-icons/material-outlined/Search'
-import { Close } from '@styled-icons/evaicons-solid/Close'
-import { Accessibility } from '@styled-icons/ionicons-solid/Accessibility'
-import { Contrast } from '@styled-icons/foundation/Contrast'
-import { ListOutline } from '@styled-icons/evaicons-outline/ListOutline'
+import { Trash } from '@styled-icons/boxicons-regular/Trash';
+import { LogOut } from '@styled-icons/ionicons-outline/LogOut';
+import { Search } from '@styled-icons/material-outlined/Search';
+import { Close } from '@styled-icons/evaicons-solid/Close';
+import { Accessibility } from '@styled-icons/ionicons-solid/Accessibility';
+import { Contrast } from '@styled-icons/foundation/Contrast';
+import { ListOutline } from '@styled-icons/evaicons-outline/ListOutline';
 import Google from '../../assets/svg/google.svg';
 
 export const ArrowDown = styled(ArrowIosDownward)`
@@ -46,7 +46,7 @@ export const SearchIcon = styled(Search)`
   :hover {
     fill: rgb(var(--Stroke), 1);
   }
-`
+`;
 export const CloseIcon = styled(Close)`
   width: 45px;
   height: 45px;
@@ -55,7 +55,7 @@ export const CloseIcon = styled(Close)`
   :hover {
     background: rgb(var(--Stroke), .1);
   }
-`
+`;
 export const InvalidIcon = styled.span`
   display: flex;
   font-size: 4rem;

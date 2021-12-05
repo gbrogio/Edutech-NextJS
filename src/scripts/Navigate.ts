@@ -1,5 +1,5 @@
+/* eslint no-return-assign: "off" */
 // navegação Suave
-
 const smoothScrollTo = (endX, endY, duration) => {
   // pegando posição X&Y da pagina
   const startX = window.scrollX || window.pageXOffset;
@@ -35,7 +35,7 @@ const smoothScrollTo = (endX, endY, duration) => {
     // Scroll
     window.scroll(newX, newY);
   }, 1000 / 60); // 60 fps
-}
+};
 
 // Exportando
 export default smoothScrollTo;

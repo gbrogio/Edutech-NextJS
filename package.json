@@ -33,7 +33,7 @@
     "babel": "^6.23.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "dotenv": "^10.0.0",
-    "eslint": "^8.2.0",
+    "eslint": "^8.4.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",

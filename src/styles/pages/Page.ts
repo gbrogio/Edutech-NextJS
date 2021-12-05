@@ -188,3 +188,13 @@ export const Main = styled.main`
     }
   }
 `;
+
+export const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  background-color: rgb(var(--Green));
+  margin-top: 5rem;
+  height: 45px;
+`;

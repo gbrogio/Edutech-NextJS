@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export const CardCp = createGlobalStyle`
   div.CardCp {
@@ -56,4 +56,3 @@ export const CardCp = createGlobalStyle`
     }
   }
 `;
-

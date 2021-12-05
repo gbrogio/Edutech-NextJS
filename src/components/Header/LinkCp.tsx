@@ -1,6 +1,8 @@
+/* eslint no-nested-ternary: "off" */
+
 // importações
 import React, { useEffect } from 'react';
-import {parseCookies} from 'nookies'
+import { parseCookies } from 'nookies';
 import { useRouter } from 'next/router';
 
 import { Container } from './styleLink';
@@ -26,11 +28,13 @@ const LinkCp: React.FC<props> = ({
   return (
     <Container
       tabIndex={tabIndex}
-      aria-label={isActive ? ariaLabel + ' ' + children + ', status: ativo' : isActive === false ? ariaLabel + ' ' + children + ', status: desativado' : ariaLabel}
+      aria-label={isActive ? `${ariaLabel} ${children}, status: ativo`
+        : isActive === false ? `${ariaLabel} ${children}, status: desativado`
+          : ariaLabel}
       onClick={() => {
         router.push(hRef).then(() => {
-          router.reload()
-        })
+          router.reload();
+        });
       }}
       id={isInternal ? `${iD.get}` : ''}
       data-lid={iD.lid}

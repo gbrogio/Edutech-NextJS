@@ -1,7 +1,8 @@
 // importações
 import { initializeApp, getApps } from 'firebase/app';
 import {
-  AuthCredential, reauthenticateWithCredential, getAuth, GoogleAuthProvider, onIdTokenChanged, signOut, signInWithRedirect, deleteUser
+  AuthCredential, reauthenticateWithCredential, getAuth, GoogleAuthProvider,
+  onIdTokenChanged, signOut, signInWithRedirect, deleteUser,
 } from 'firebase/auth';
 
 // Configuração da API

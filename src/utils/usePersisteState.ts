@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { setCookie, parseCookies } from 'nookies';
+import { setCookie } from 'nookies';
 
 function usePersistedState(key: any, value: any, initialState: any) {
   const [state, setState] = useState(() => {

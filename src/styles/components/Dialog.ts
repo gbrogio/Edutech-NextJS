@@ -28,4 +28,3 @@ export const Dialog = styled.div`
     }
   }
 `;
-

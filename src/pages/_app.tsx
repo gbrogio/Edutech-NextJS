@@ -6,11 +6,10 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 
 // componente de autenticação
-import { AuthProvider } from '../context/AuthContext';
 
 // estilos globais
 import { Colors } from 'styles/global/Colors';
-import { CardCp } from 'style-components/CardCp'
+import { CardCp } from 'style-components/CardCp';
 import GlobalStyles from 'styles/global/Global';
 import AccessibilityCp from 'components/Accessibility';
 
@@ -18,8 +17,9 @@ import AccessibilityCp from 'components/Accessibility';
 import Contrast from 'styles/theme/contrast';
 import Default from 'styles/theme/default';
 import { ThemeProvider } from 'styled-components';
-import { setCookie, parseCookies } from 'nookies'
+import { setCookie, parseCookies } from 'nookies';
 import usePersistedState from 'src/utils/usePersisteState';
+import { AuthProvider } from '../context/AuthContext';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   // altera a div __next
@@ -33,7 +33,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [fontSize, setFontSize] = usePersistedState('USER_FONTSIZE', parseCookies().USER_FONTSIZE, '16px');
   const fontSmall = '16px';
   const fontBig = '18px';
-  console.log(fontSize)
 
   const toggleFontSize = () => {
     if (fontSize === '16px') {
@@ -49,10 +48,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         path: '/',
       });
     }
-  }
+  };
   useEffect(() => {
-    document.querySelector('html').style.fontSize = fontSize === '16px' ? fontSmall : fontBig
-  }, [fontSize])
+    document.querySelector('html').style.fontSize = fontSize === '16px' ? fontSmall : fontBig;
+  }, [fontSize]);
 
   const [themeData, setThemeData] = usePersistedState('USER_THEME', parseCookies().USER_THEME, 'default');
   const defaultTheme = 'default';
@@ -97,7 +96,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         fontSize={fontSize}
       />
       {/* carregamento das paginas */}
-      <Component {...pageProps}/>
+      <Component {...pageProps} />
     </AuthProvider>
 
   );
