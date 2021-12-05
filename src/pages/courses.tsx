@@ -7,10 +7,8 @@ import InputCp from 'components/Inputs/InputCp';
 import {setCookie, parseCookies} from 'nookies';
 import createCardCp from 'components/CardCp';
 import { InvalidIcon } from 'style-components/Icons';
-
 const Courses: React.FC = () => {
   // estados
-  const [ErrMsg, setErrMsg] = useState(false)
   const [hasLoad, setHasLoad] = useState(false)
   const [courseSection, getCourseSection] = useState(null)
 
@@ -25,80 +23,91 @@ const Courses: React.FC = () => {
 
   useEffect(() => {
     const divC = document.getElementById('courses') // elemento de resposta
-    const selectSerie = document.getElementById('selectBar') as HTMLSelectElement;
-    setHasLoad(true)
+    const selectSerie = document.getElementById('selectBar') as HTMLSelectElement; // elemento escolha de série
+    setHasLoad(true) // avisa se o front ja carregou
     getCourseSection(divC) // armazenando
 
+    // define o valor do select de acordo com a serie selecionada
     selectSerie.addEventListener('change', () => {
-      const selectValue = selectSerie.value
-      const routerSearch = selectValue.toLowerCase()
-        .replace(/º/g, '')
-        .replace(/é/g, 'e')
-        .replace(/\s/g, '+')
+      const selectValue = selectSerie.value // pega o valor atual
+      const routerSearch = selectValue.toLowerCase() // transforma o valor em minusculo
+        .replace(/º/g, '') // retira o sinal º
+        .replace(/é/g, 'e') // substitui o é por e
+        .replace(/\s/g, '+') // substitui os espaços por +
 
-      if (selectValue !== 'Selecione sua Série...') {
-        router.push('/courses' + '?=' + routerSearch).then(() => {
-          setCookie(null, 'SEARCH_COOKIE', selectValue, {
+      if (selectValue !== 'Selecione sua Série...') {// se tiver uma série selecionada
+        router.push('/courses' + '?=' + routerSearch).then(() => { // redirecione o cliente e
+          setCookie(null, 'SEARCH_COOKIE', selectValue, { // seta o cookie de pesquisa para o valor atual
             maxAge: 86400 * 7 * 4 * 12,
             path: '/',
           });
-          router.reload()
+          router.reload() // recarrega a pagina
         })
-      } else {
-        router.push('/courses').then(() => {
-          setCookie(null, 'SEARCH_COOKIE', selectValue, {
+      } else {// se não tiver uma série selecionada
+        router.push('/courses').then(() => { // empurre para a rota default e
+          setCookie(null, 'SEARCH_COOKIE', selectValue, { // seta o cookie de pesquisa para o valor default
             maxAge: 86400 * 7 * 4 * 12,
             path: '/',
           });
-          router.reload()
+          router.reload() // recarrega a pagina
         })
       }
     }, false)
 
-    selectSerie.value = parseCookies().SEARCH_COOKIE
-    // pega o input
+    selectSerie.value = parseCookies().SEARCH_COOKIE // define o valor do select para o valor presente nos cookies
+
+    // pega o input de pesquisa
     const searchElm = document.getElementById('searchElm') as HTMLInputElement;
+    // pega o botão de pesquisa
     const searchBtnSvg = document.getElementById('searchBtnSvg')
+
+    // alteração do focos
     const cardFocus = (keyWord) => {
       const Card = document.querySelector('div.CardCp')
       if (Card) {
         setTimeout(() => {
-          const cardId = Card.attributes[3].textContent
-          document.getElementById(cardId).focus()
+          const cardId = Card.attributes[3].textContent // pega o id do em questão
+          document.getElementById(cardId).focus() // e define o foco no elemento que contenha esse id
         }, 1000)
-      } else if (keyWord === '') {
-        document.getElementById('notCourse').focus()
+      } else if (keyWord === '' || keyWord === ' ') { //  se não houver pesquisa
+        document.getElementById('notCourse').focus() // define o doco no elemento div#notCourse
       }
     }
+    // define a função de pesquisar
     const searchCourse = () => {
       if (divC.children.length === 0) {
-        searchedCourse(keyWord);
-        cardFocus(keyWord);
+        searchedCourse(keyWord); // executa a pesquisa
+        cardFocus(keyWord); // define o foco
       } else {
-        cardFocus(keyWord);
+        cardFocus(keyWord); // define o foco
       }
     }
-    searchBtnSvg.addEventListener('click', () => {
+
+    // executam a função de pesquisar se
+    searchBtnSvg.addEventListener('click', () => { // houver click
       searchCourse()
     })
-    searchElm.addEventListener('keydown', (event) => {
+    searchElm.addEventListener('keydown', (event) => { // ou apertar a tecla enter
       if (event.key === "Enter") {
         searchCourse()
       }
     })
 
+    // dependendo da resposta habilitar/desabilitar div#notCourse
     setInterval(() => {
       const divNC = document.getElementById('notCourse') // elemento de resposta
       if (divC.children.length === 0) {
-        divNC.style.display = 'flex';
+        divNC.style.display = 'flex'; // habilitar
       } else {
-        divNC.style.display = 'none';
+        divNC.style.display = 'none'; // desabilitar
       }
     }, 1000)
 
   })
 
-  // integrações
+  // integrações com api
+
+  // define o que cada valor retornado vaz - infelizmente incompleto
   const acceptedValues = {
     anoensinomedio1(data) {
       allCourses.push(data[0])
@@ -107,6 +116,8 @@ const Courses: React.FC = () => {
         path: '/',
       });
     },
+
+    // Não foi possivel encontrar os cursos para as séries abaixo
     anoensinomedio2(data) {
       allCourses.push(data[1])
       setCookie(null, 'SEARCH_COOKIE', "2º ano Ensino Médio", {
@@ -150,36 +161,42 @@ const Courses: React.FC = () => {
       });
     },
   }
+  // filtrando cursos iguais e os armazenando
   const removeDuplicate = () => {
     for (let i = 0; i < allCourses[0].length; i++){
       allCSearched.push(allCourses[0][i])
       allCFiltered = allCSearched.filter((item, duplicate) => allCSearched.indexOf(item) === duplicate);
     }
   }
-  if (router.asPath === '/courses') {
+  // faz a verificação para executar a procura pela api a api
+  if (router.asPath === '/courses') { // caso não tenha serie
+    // defina o cookie serie para o estado default
     setCookie(null, 'SEARCH_COOKIE', 'Selecione sua Série...', {
       maxAge: 86400 * 7 * 4 * 12,
       path: '/',
     });
 
-    // api alura
+    // e faça a integração com a api alura - https://alura.com/api/cursos
     fetch('https://www.alura.com.br/api/cursos')
       .then(res => res.json())
       .then(data => {
         allCourses.push(data)
         removeDuplicate()
       })
-  } else { // meu json
-    fetch('/json/serie-courses.json')
-      .then(res => res.json()
-      ).then(data => {
-        const number = router.asPath.replace(/[^0-9]/g, '')
-        const configSearch = router.asPath
-          .replace(/^((ftp|http|https):\/\/)?(www.|)?([A-z&0-9./]*)/g, '')
-          .replace(/[?=+]/g, '')
-          .replace(/[0-9]/g, '')
-          .replace(/o([^o]*)$/g, 'o') + number
+  } else { // caso tenha uma serie selecionada
+    // pegue o numero da serie pesquisada
+    const number = router.asPath.replace(/[^0-9]/g, '')
+    // e transforme a pequisa no formato anoensinomedio[number] ou ano[number]
+    const configSearch = router.asPath
+      .replace(/^((ftp|http|https):\/\/)?(www.|)?([A-z&0-9./]*)/g, '') // regex parte da url
+      .replace(/[?=+]/g, '') // retira o sinal de pesquisa
+      .replace(/[0-9]/g, '') // retira o numero
+      .replace(/o([^o]*)$/g, 'o') + number // pegue a ultima letra e adicione o [numero]
 
+    // e faça a integração com o meu json - /json/serie-courses.json
+    fetch('/json/serie-courses.json')
+      .then(res => res.json())
+      .then(data => {
         const pushValues = acceptedValues[configSearch]
         pushValues(data)
 
@@ -205,8 +222,8 @@ const Courses: React.FC = () => {
           return courseSection.appendChild(elmCard) // enviando os cards como resposta ao cliente
         }
       })
-      // easterEgg, easterEggImg, pushTo, name, slug, description, router
       if (keyWord === 'gbrogio') {
+        // criando o componente card
         const elmCard = await createCardCp(
           true,
           'https://avatars.githubusercontent.com/u/79169549?v=4',
@@ -220,6 +237,7 @@ const Courses: React.FC = () => {
         return courseSection.appendChild(elmCard) // enviando os cards como resposta ao cliente
       }
       if (keyWord === 'alura') {
+        // criando o componente card
         const elmCard = await createCardCp(
           true,
           'https://www.alura.com.br/assets/favicon.1636535197.ico',
@@ -255,13 +273,13 @@ const Courses: React.FC = () => {
               hasIcon: false,
               value: [
                 'Selecione sua Série...',
-                '6º ano',
-                '7º ano',
-                '8º ano',
-                '9º ano',
+                // '6º ano', // Não foi possivel encontrar os cursos para essa série
+                // '7º ano', // Não foi possivel encontrar os cursos para essa série
+                // '8º ano', // Não foi possivel encontrar os cursos para essa série
+                // '9º ano', // Não foi possivel encontrar os cursos para essa série
                 '1º ano Ensino Médio',
-                '2º ano Ensino Médio',
-                '3º ano Ensino Médio',
+                // '2º ano Ensino Médio', // Não foi possivel encontrar os cursos para essa série
+                // '3º ano Ensino Médio', // Não foi possivel encontrar os cursos para essa série
               ]
             }}
           />

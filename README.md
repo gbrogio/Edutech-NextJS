@@ -40,12 +40,23 @@
 - [X] 📖 Busca por Cursos - Alura
 - [X] 📖 Contraste Tema
 
-<h1 id="Sobre">📜 Sobre</h1>
-<p>Site de auxilio aos alunos do programa <b>EDU</b>TECH. Para encontrarem seus cursos de maneira simples, rápida e acessível</p>
+# <h1 id="Sobre">📜 Sobre</h1>
+<p>Site de auxilio aos alunos do programa <b>EDU</b>TECH. Para encontrarem seus cursos de maneira simples, rápida e acessível.
+  Algumas curiosidades: <br>
+  se em qualquer pagina você digitar "edutech" algo vai acontecer... <br>
+  se na pagina de cursos voce digitar "gbrogio" ou "alura" você vai habilitar cards secretos. <br>
+  <br>
+</p>
+Link do Projeto:
+![Figma](https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3)
 
-<h1 id="PreRequisitos">👌 Pré-requisitos</h1>
+obs: Infelizmente, até o momento, na busca por séries apenas a opção
+"1° ano Ensino Médio" está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
+
+
+# <h1 id="PreRequisitos">👌 Pré-requisitos</h1>
 <p>Antes de Começar você precisa ter instalado em seu computador as seguintes ferramentas:
-<a href="https://nodejs.org/">Node.js</a>, <a href="https://git-scm.com/">Git</a>, um gerenciador de pacotes como <a href="https://yarnpkg.com/">Yarn</a> ou <a href="https://nodejs.org/">npm</a> e também será nescessário um editor de texto/código como <a href="https://code.visualstudio.com/">Visual Studio Code (VSCode)</a>.</p>
+<a href="https://nodejs.org/">Node.js</a>, <a href="https://git-scm.com/">Git</a>, um gerenciador de pacotes como <a href="https://yarnpkg.com/">Yarn</a> ou <a href="https://nodejs.org/">npm</a> e também será necessário um editor de texto/código como <a href="https://code.visualstudio.com/">Visual Studio Code (VSCode)</a>.</p>
 
 # <p id="ClonarInstalar">📦 Clonar / Instalar</p>
 Clonar Projeto:
@@ -81,7 +92,89 @@ continuar com a experiencia
 
 # <h1 id="Mapa">🗺️ Mapa das Pastas</h1>
   ```bash
-    Nothing for here...
+    -| |> [public]: Pasta
+    -| | |> [json]: Pasta
+    -| | |  |> (serie-courses.json): Arquivo
+    -| |
+    -| | |> (confetti.gif): Arquivo
+    -| | |> (edutech.jpg): Arquivo
+    -| |
+    -| |> [src]: Pasta
+    -| | |> [assets/svg]: Pasta
+    -| | |  |> (google.svg): Arquivo
+    -| |
+    -| | |> [components]: Pasta
+    -| | |  |> [Accessibility]: Pasta
+    -| | |  | |> (index.tsx): Arquivo
+    -| | |  | |> (stylesAccessibility.ts): Arquivo
+    -| | |  |
+    -| | |  |> [Header]: Pasta
+    -| | |  | |> (index.tsx): Arquivo
+    -| | |  | |> (LinkCp.tsx): Arquivo
+    -| | |  | |> (LogoCp.tsx): Arquivo
+    -| | |  | |> (Nav.tsx): Arquivo
+    -| | |  | |> (styleLink.ts): Arquivo
+    -| | |  | |> (styles.ts): Arquivo
+    -| | |  | |> (stylesLogo.ts): Arquivo
+    -| | |  | |> (stylesUser.ts): Arquivo
+    -| | |  | |> (UserCp.tsx): Arquivo
+    -| | |  |
+    -| | |  |> [Inputs]: Pasta
+    -| | |  | |> (ButtonCp.tsx): Arquivo
+    -| | |  | |> (InputCp.tsx): Arquivo
+    -| | |  | |> (styleButton.ts): Arquivo
+    -| | |  | |> (styleInput.ts): Arquivo
+    -| | |  |
+    -| | |  |> [Layout]: Pasta
+    -| | |  | |> (index.tsx): Arquivo
+    -| | |  |
+    -| | |  |> (CardCp.ts): Arquivo
+    -| | |
+    -| | |> [context]: Pasta
+    -| | |  |> (AuthContext.tsx): Arquivo
+    -| | |
+    -| | |> [hook]: Pasta
+    -| | |  |> (useAuth.ts): Arquivo
+    -| | |
+    -| | |> [lib]: Pasta
+    -| | |  |> (firebase.ts): Arquivo
+    -| | |
+    -| | |> [pages]: Pasta
+    -| | |  |> (_app.tsx): Arquivo
+    -| | |  |> (_document.tsx): Arquivo
+    -| | |  |> (about.tsx): Arquivo
+    -| | |  |> (course.tsx): Arquivo
+    -| | |  |> (index.tsx): Arquivo
+    -| | |
+    -| | |> [scripts]: Pasta
+    -| | |  |> (Konami.ts): Arquivo
+    -| | |  |> (Navigate.ts): Arquivo
+    -| | |
+    -| | |> [styles]: Pasta
+    -| | |  |> [components]: Pasta
+    -| | |  | |> (CardCp.ts): Arquivo
+    -| | |  | |> (Dialog.ts): Arquivo
+    -| | |  | |> (Icons.ts): Arquivo
+    -| | |  | |> (Text.ts): Arquivo
+    -| | |  |
+    -| | |  |> [global]: Pasta
+    -| | |  | |> (Colors.ts): Arquivo
+    -| | |  | |> (Global.ts): Arquivo
+    -| | |  |
+    -| | |  |> [pages]: Pasta
+    -| | |  | |> (Pages.ts): Arquivo
+    -| | |  |
+    -| | |  |> [theme]: Pasta
+    -| | |  | |> (contrast.ts): Arquivo
+    -| | |  | |> (default.ts): Arquivo
+    -| | |  |
+    -| | |  |> (styled.d.ts): Arquivo
+    -| | |
+    -| | |> [utils]: Pasta
+    -| | |  |> (usePersisteState.ts): Arquivo
+    -| | |
+    -| |
+    -|
   ```
 
 # <h1 id="Tecnologias">⚒️ Tecnologias</h1>

@@ -1,7 +1,7 @@
 // importações
 import { initializeApp, getApps } from 'firebase/app';
 import {
-  getAuth, GoogleAuthProvider, onIdTokenChanged, signOut, signInWithRedirect, deleteUser
+  AuthCredential, reauthenticateWithCredential, getAuth, GoogleAuthProvider, onIdTokenChanged, signOut, signInWithRedirect, deleteUser
 } from 'firebase/auth';
 
 // Configuração da API
@@ -28,6 +28,10 @@ const authParams = {
   auth,
   providers: {
     google: providerGoogle,
+  },
+  deleteProv: {
+    AuthCredential,
+    reauthenticateWithCredential,
   },
   onIdTokenChanged,
   signInWithRedirect,

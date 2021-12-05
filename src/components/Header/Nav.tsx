@@ -60,7 +60,7 @@ export const Nav = (pathname, LinkCp, tab) => (
 );
 export const navLeft = (verifyTabIndex, LinkCp) => (
   <>
-    <LinkCp
+    {/* <LinkCp // Não foi possivel encontrar os cursos para as séries abaixo
       tabIndex={verifyTabIndex}
       hRef="/courses?=6+ano"
       ariaLabel="1 de 7,"
@@ -130,12 +130,12 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
       }
     >
       9º ano
-    </LinkCp>
+    </LinkCp> */}
 
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=1+ano+ensino+medio"
-      ariaLabel="5 de 7,"
+      ariaLabel="1 de 1,"
       iD={{
         get: 'noUnder',
         lid: '1anoEM',
@@ -150,7 +150,7 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
       1º ano - Ensino Médio
     </LinkCp>
 
-    <LinkCp
+    {/* <LinkCp // Não foi possivel encontrar os cursos para as séries abaixo
       tabIndex={verifyTabIndex}
       hRef="/courses?=2+ano+ensino+medio"
       ariaLabel="6 de 7,"
@@ -184,6 +184,6 @@ export const navLeft = (verifyTabIndex, LinkCp) => (
       }
     >
       3º ano - Ensino Médio
-    </LinkCp>
+    </LinkCp> */}
   </>
 );

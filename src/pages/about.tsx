@@ -1,13 +1,38 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LayoutCp from 'components/Layout';
+import { ListIcon } from 'style-components/Icons'
 import { Title, Paragraph, LinkA, Bash } from 'style-components/Text';
+import smoothScrollTo from 'scripts/Navigate'
 
 const About: React.FC = () => {
+  useEffect(() => {
+    // scroll suave
+    const internalLink = document.querySelectorAll('#internalLink'); // pega os links de scroll
+    // pega o elemento final do scroll
+    function getScrollTopByHref(element) {
+      const id = element.getAttribute('href'); // id do elemento
+      return document.getElementById(id.replace(/\#/g, '')).offsetTop; // a distancia entre o link e o elemento
+    }
+
+    // procura pelos links
+    internalLink.forEach((item) => {
+      // quando o link for clicado
+      item.addEventListener('click', (event) => {
+        event.preventDefault(); // retire a configuração padrão
+        const to = getScrollTopByHref(event.currentTarget) - 250; // pegue a distancia do elemento
+        smoothScrollTo(0, to, 500); // leve o cliente até o elemento
+      });
+    });
+  });
+
   return (
     <>
       <LayoutCp>
         <section className="titleRead">
+          <div className="Read">
+            <a href="https://github.com/gbrogio/Edutech-NextJS/blob/main/README.md"><ListIcon /> <p>README.md</p></a>
+          </div>
           <span style={{fontSize: '4rem'}}>🌎</span>
           <div style={{textAlign: 'center'}} tabIndex={0} aria-label="Edutech - 2021, Paraná, Brasil. Titulo">
             <Title style={{fontWeight: 400, whiteSpace: 'nowrap'}}><b>EDU</b>TECH - 2021</Title>
@@ -41,24 +66,24 @@ const About: React.FC = () => {
           >📄 Índice</Title>
 
           <ul className="table">
-            <li tabIndex={0} role="link" aria-label="Recursos">✨ Recursos</li>
-            <li tabIndex={0} role="link" aria-label="Sobre">📜 Sobre</li>
-            <li tabIndex={0} role="link" aria-label="Pré-requisitos">👌 Pré-requisitos</li>
-            <li tabIndex={0} role="link" aria-label="Clonar e Instalar projeto">📦 Clonar / Instalar</li>
+            <li aria-label="Recursos">✨ <LinkA tabIndex={0} role="link" id="internalLink" href="#Recursos">Recursos</LinkA></li>
+            <li tabIndex={0} role="link" aria-label="Sobre">📜 <LinkA tabIndex={0} role="link" id="internalLink" href="#Sobre">Sobre</LinkA></li>
+            <li tabIndex={0} role="link" aria-label="Pré-requisitos">👌 <LinkA tabIndex={0} role="link" id="internalLink" href="#PreRequisitos">Pré-requisitos</LinkA></li>
+            <li tabIndex={0} role="link" aria-label="Clonar e Instalar projeto">📦 <LinkA tabIndex={0} role="link" id="internalLink" href="#ClonarInstalar">Clonar / Instalar</LinkA></li>
             <li>
-              🔨 Como usar
+            🔨 <LinkA tabIndex={0} role="link" id="internalLink" href="#recursos">Como usar</LinkA>
               <ul style={{paddingLeft: '2em'}} >
-                <li tabIndex={0} role="link" aria-label="Editar">✏️ Editar</li>
-                <li tabIndex={0} role="link" aria-label="Mapa das Pastas">🗺️ Mapa das Pastas</li>
+                <li tabIndex={0} role="link" aria-label="Editar">✏️ <LinkA tabIndex={0} role="link" id="internalLink" href="#Editar">Editar</LinkA></li>
+                <li tabIndex={0} role="link" aria-label="Mapa das Pastas">🗺️ <LinkA tabIndex={0} role="link" id="internalLink" href="#Mapa">Mapa das Pastas</LinkA></li>
               </ul>
             </li>
-            <li tabIndex={0} role="link" aria-label="Tecnologias">⚒️ Tecnologias</li>
-            <li tabIndex={0} role="link" aria-label="Contato">👤 Contato</li>
+            <li tabIndex={0} role="link" aria-label="Tecnologias">⚒️ <LinkA tabIndex={0} role="link" id="internalLink" href="#Tecnologias">Tecnologias</LinkA></li>
+            <li tabIndex={0} role="link" aria-label="Contato">👤 <LinkA tabIndex={0} role="link" id="internalLink" href="#Contato">Contato</LinkA></li>
           </ul>
         </section>
         <span className="line"></span>
         <section className="featuresRead tableContainer">
-          <Title className="titleLight" tabIndex={0} aria-label="Recursos">✨ Recursos</Title>
+          <Title className="titleLight" id="Recursos" tabIndex={0} aria-label="Recursos">✨ Recursos</Title>
 
           <ul className="table">
             <li>
@@ -82,22 +107,30 @@ const About: React.FC = () => {
 
         <span className="line"></span>
         <section className="aboutRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Sobre">📜 Sobre</Title>
+          <Title className="titleLight" id="Sobre" tabIndex={0} aria-label="Sobre">📜 Sobre</Title>
 
           <Paragraph tabIndex={0} className="paragraph">Site de auxilio aos alunos do programa <b>EDU</b>TECH.
-            Encontre seus cursos de maneira simples, rápida e acessível. <br />
+            Encontre seus cursos de maneira simples, rápida e acessível. Algumas curiosidades: <br/>
+            se em qualquer pagina você digitar "edutech" algo vai acontecer... <br/>
+            se na pagina de cursos voce digitar "gbrogio" ou "alura" você vai habilitar cards secretos. <br/>
+            <br />
+            <p style={{marginTop: '6px'}} aria-label="
+              Link do Projeto (figma):
+            ">
+              Link do Projeto: <LinkA href="https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3">Figma</LinkA>
+            </p>
             <p style={{marginTop: '6px'}} aria-label="
               observação: Infelizmente, até o momento, na busca por séries apenas a opção
-              primeiro ano Ensino Médio está funcionado.
+              primeiro ano Ensino Médio está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
             ">
               obs: Infelizmente, até o momento, na busca por séries apenas a opção
-              "1° ano Ensino Médio" está funcionado.
+              "1° ano Ensino Médio" está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
             </p>
           </Paragraph>
         </section>
         <span className="line"></span>
         <section className="requisiteRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Pré-requisitos">👌 Pré-requisitos</Title>
+          <Title className="titleLight" id="PreRequisitos" tabIndex={0} aria-label="Pré-requisitos">👌 Pré-requisitos</Title>
           <Paragraph className="paragraph">
             <p tabIndex={0} className="inLine">
               Antes de Começar você precisa ter instalado em seu computador as
@@ -123,7 +156,7 @@ const About: React.FC = () => {
         </section>
         <span className="line"></span>
         <section className="requisiteRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Clonar e Instalar">📦 Clonar / Instalar</Title>
+          <Title className="titleLight" tabIndex={0} id="ClonarInstalar" aria-label="Clonar e Instalar">📦 Clonar / Instalar</Title>
           <Paragraph style={{opacity: .7}} tabIndex={0}>Clonar Projeto:</Paragraph>
           <Bash tabIndex={0} aria-label="no terminal use: git clone https://github.com/gbrogio/Edutech-NextJS.git">$  git clone https://github.com/gbrogio/Edutech-NextJS.git</Bash>
 
@@ -146,7 +179,7 @@ const About: React.FC = () => {
         </section>
         <span className="line"></span>
         <section className="editRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Editar">✏️ Editar</Title>
+          <Title className="titleLight" id="Editar" tabIndex={0} aria-label="Editar">✏️ Editar</Title>
 
           <Paragraph tabIndex={0} className="paragraph">Dentro da pasta <em><strong>src</strong></em>, você
             encontrará as pastas: <em><strong>Components</strong></em>,
@@ -166,12 +199,96 @@ const About: React.FC = () => {
         </section>
         <span className="line"></span>
         <section className="mapRead">
-          <Title className="titleLight">🗺️ Mapa Das Pastas</Title>
-          <Bash style={{marginTop: '1rem'}}>Nothing for here</Bash>
+          <Title className="titleLight" id="Mapa">🗺️ Mapa Das Pastas</Title>
+          <Bash style={{marginTop: '1rem'}}>
+            -| |&gt; [public]: Pasta <br/>
+            -| | |&gt; [json]: Pasta <br/>
+            -| | |  |&gt; (serie-courses.json): Arquivo <br/>
+            -| | <br/>
+            -| | |&gt; (confetti.gif): Arquivo <br/>
+            -| | |&gt; (edutech.jpg): Arquivo <br/>
+            -| | <br/>
+            -| |&gt; [src]: Pasta <br/>
+            -| | |&gt; [assets/svg]: Pasta <br/>
+            -| | |  |&gt; (google.svg): Arquivo <br/>
+            -| | <br/>
+            -| | |&gt; [components]: Pasta <br/>
+            -| | |  |&gt; [Accessibility]: Pasta <br/>
+            -| | |  | |&gt; (index.tsx): Arquivo <br/>
+            -| | |  | |&gt; (stylesAccessibility.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [Header]: Pasta <br/>
+            -| | |  | |&gt; (index.tsx): Arquivo <br/>
+            -| | |  | |&gt; (LinkCp.tsx): Arquivo <br/>
+            -| | |  | |&gt; (LogoCp.tsx): Arquivo <br/>
+            -| | |  | |&gt; (Nav.tsx): Arquivo <br/>
+            -| | |  | |&gt; (styleLink.ts): Arquivo <br/>
+            -| | |  | |&gt; (styles.ts): Arquivo <br/>
+            -| | |  | |&gt; (stylesLogo.ts): Arquivo <br/>
+            -| | |  | |&gt; (stylesUser.ts): Arquivo <br/>
+            -| | |  | |&gt; (UserCp.tsx): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [Inputs]: Pasta <br/>
+            -| | |  | |&gt; (ButtonCp.tsx): Arquivo <br/>
+            -| | |  | |&gt; (InputCp.tsx): Arquivo <br/>
+            -| | |  | |&gt; (styleButton.ts): Arquivo <br/>
+            -| | |  | |&gt; (styleInput.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [Layout]: Pasta <br/>
+            -| | |  | |&gt; (index.tsx): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; (CardCp.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [context]: Pasta <br/>
+            -| | |  |&gt; (AuthContext.tsx): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [hook]: Pasta <br/>
+            -| | |  |&gt; (useAuth.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [lib]: Pasta <br/>
+            -| | |  |&gt; (firebase.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [pages]: Pasta <br/>
+            -| | |  |&gt; (_app.tsx): Arquivo <br/>
+            -| | |  |&gt; (_document.tsx): Arquivo <br/>
+            -| | |  |&gt; (about.tsx): Arquivo <br/>
+            -| | |  |&gt; (course.tsx): Arquivo <br/>
+            -| | |  |&gt; (index.tsx): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [scripts]: Pasta <br/>
+            -| | |  |&gt; (Konami.ts): Arquivo <br/>
+            -| | |  |&gt; (Navigate.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [styles]: Pasta <br/>
+            -| | |  |&gt; [components]: Pasta <br/>
+            -| | |  | |&gt; (CardCp.ts): Arquivo <br/>
+            -| | |  | |&gt; (Dialog.ts): Arquivo <br/>
+            -| | |  | |&gt; (Icons.ts): Arquivo <br/>
+            -| | |  | |&gt; (Text.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [global]: Pasta <br/>
+            -| | |  | |&gt; (Colors.ts): Arquivo <br/>
+            -| | |  | |&gt; (Global.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [pages]: Pasta <br/>
+            -| | |  | |&gt; (Pages.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; [theme]: Pasta <br/>
+            -| | |  | |&gt; (contrast.ts): Arquivo <br/>
+            -| | |  | |&gt; (default.ts): Arquivo <br/>
+            -| | |  | <br/>
+            -| | |  |&gt; (styled.d.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | |&gt; [utils]: Pasta <br/>
+            -| | |  |&gt; (usePersisteState.ts): Arquivo <br/>
+            -| | | <br/>
+            -| | <br/>
+            -| <br/>
+          </Bash>
         </section>
         <span className="line"></span>
         <section className="techRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Tecnologias">⚒️ Tecnologias</Title>
+          <Title className="titleLight" id="Tecnologias" tabIndex={0} aria-label="Tecnologias">⚒️ Tecnologias</Title>
           <Paragraph>
             <div style={{marginTop: '2rem'}} className="badge">
               <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" />
@@ -193,7 +310,7 @@ const About: React.FC = () => {
         </section>
         <span className="line"></span>
         <section className="contactRead">
-          <Title className="titleLight" tabIndex={0} aria-label="Contato">👤 Contato</Title>
+          <Title className="titleLight" tabIndex={0} id="Contato" aria-label="Contato">👤 Contato</Title>
 
           <Paragraph className="authorInfo" style={{opacity: .9,}}>
             <LinkA href="https://github.com/gbrogio">
@@ -211,7 +328,7 @@ const About: React.FC = () => {
             Manda um "oi!"👋🏽 lá no nosso <LinkA href="https://discord.gg/ANAWECH3UP">
               server do discord
             </LinkA>! <br/>
-            <img style={{marginTop: '1rem'}} tabIndex={0} aria-label="ou mande um email para guilhermebrogio.ps@gmail.com" src="https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:guilhermebrogio.ps@gmail.com" alt="Gmail Badge" />
+            <LinkA href="mailto:guilhermebrogio.ps@gmail.com" tabIndex={0} role="link" aria-label="ou mande um email para guilhermebrogio.ps@gmail.com"><img style={{marginTop: '1rem'}} src="https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:guilhermebrogio.ps@gmail.com" alt="Gmail Badge" /></LinkA>
           </Paragraph>
         </section>
 

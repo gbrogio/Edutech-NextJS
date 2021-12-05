@@ -64,6 +64,7 @@ const Header: React.FC = () => {
 
     if (!isNav) { //  se a navegação esquerda for falsa
       buttonMenu.checked = false; // Retire o menu
+      document.documentElement.style.overflow ='scroll'; // habilita o scroll da pagina
 
       if (Content.tabIndex === 0) {
         Content.focus() // colocando o foco depois da header
@@ -78,6 +79,7 @@ const Header: React.FC = () => {
       })
 
     } else { //  se a navegação esquerda estiver ativada
+      document.documentElement.style.overflow =  isWidth < 425 ? 'hidden': 'scroll'; // retira o scroll da pagina
       buttonMenu.checked = true; // ative o menu
       navLeft.focus(); // e coloque o foco no menu
       navLeft.style.visibility = 'visible' // habilite o menu

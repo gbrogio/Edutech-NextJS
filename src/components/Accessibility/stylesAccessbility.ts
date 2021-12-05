@@ -1,28 +1,38 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  z-index: 900;
-  background-color: rgb(var(--Blue));
   position: fixed;
-  right: 0;
-  padding: .2rem;
-  top: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transform: translateX(30%);
-  transition: .2s ease-in-out;
-  #ModalAccess {
-    transform: translate(-120%, -100%);
+
+  z-index: 900;
+  right: 0;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  > div {
+    display: flex;
+    align-items: center;
+    background-color: rgb(var(--Blue));
+
+    padding: .2rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translateX(calc(30% + 40px));
+    transition: .2s ease-in-out;
+    #ModalAccess {
+      transform: translateY(-40%) translateX(-90%);
+    }
   }
   :hover {
     #ModalAccess {
-      transform: translate(-80%, -100%);
+      transform: translateY(-40%) translateX(-50%);
     }
-    transform: translateX(-30%);
-    justify-content: center;
+    > div {
+      transform: translateX(calc(-30% + 40px));
+      justify-content: center;
+    }
   }
 `;

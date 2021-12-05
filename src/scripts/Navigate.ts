@@ -1,6 +1,6 @@
 // navegação Suave
 
-function smoothScrollTo(endX, endY, duration) {
+const smoothScrollTo = (endX, endY, duration) => {
   // pegando posição X&Y da pagina
   const startX = window.scrollX || window.pageXOffset;
   const startY = window.scrollY || window.pageYOffset;

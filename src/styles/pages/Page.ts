@@ -71,6 +71,25 @@ export const Main = styled.main`
     align-items: center;
     justify-content: center;
     margin-top: calc(130px + 3.5rem);
+
+    > div.Read {
+      position: absolute;
+
+      top: 130px;
+      left: 10rem;
+      a {
+        display: flex;
+        align-items: center;
+        color: var(--Text);
+      }
+
+      @media screen and (max-width: 830px) {
+        left: 2rem;
+      }
+      @media screen and (max-width: 365px) {
+        left: .5rem;
+      }
+    }
     > div {
       margin-top: 1rem;
     }
@@ -106,6 +125,12 @@ export const Main = styled.main`
   .featuresRead {
     li {
       list-style: none;
+    }
+  }
+  .mapRead {
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+    pre {
+      font-family: 'JetBrains Mono', sans-serif;
     }
   }
   .contactRead {

@@ -8,6 +8,7 @@ import { Search } from '@styled-icons/material-outlined/Search'
 import { Close } from '@styled-icons/evaicons-solid/Close'
 import { Accessibility } from '@styled-icons/ionicons-solid/Accessibility'
 import { Contrast } from '@styled-icons/foundation/Contrast'
+import { ListOutline } from '@styled-icons/evaicons-outline/ListOutline'
 import Google from '../../assets/svg/google.svg';
 
 export const ArrowDown = styled(ArrowIosDownward)`
@@ -77,4 +78,10 @@ export const AccessibilityIcon = styled(Accessibility)`
 export const ContrastIcon = styled(Contrast)`
   width: 25px;
   height: 25px;
+`;
+export const ListIcon = styled(ListOutline)`
+  width: 30px;
+  height: 30px;
+  margin-top: -9px;
+  margin-right: .5rem;
 `;

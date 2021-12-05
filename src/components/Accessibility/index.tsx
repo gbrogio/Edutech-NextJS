@@ -26,8 +26,8 @@ const AccessibilityCp: React.FC<props> = ({toggleTheme, toggleFontSize, fontSize
   });
 
   return (
-    <>
-      <Container id="AccessButton" onClick={() => setModal(isModal ? false : true)}>
+    <Container id="AccessButton" onClick={() => setModal(isModal ? false : true)}>
+      <div>
         <AccessibilityIcon />
         {isModal && <Dialog id="ModalAccess" aria-label="Acessibilidade - Modal" role="">
           <ButtonCp
@@ -59,8 +59,8 @@ const AccessibilityCp: React.FC<props> = ({toggleTheme, toggleFontSize, fontSize
 
           </ButtonCp>
         </Dialog>}
-      </Container>
-    </>
+      </div>
+    </Container>
   );
 };
 
