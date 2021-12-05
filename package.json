@@ -3,7 +3,7 @@
   "version": "1.0",
   "private": false,
   "author": "Guilherme Brogio Macedo da Silva",
-  "description": "Site para saber mais sobre o programa EDUTech e descobrir os cursos disponibilizados a você",
+  "description": "Site para saber mais sobre o programa EDUTech e descobrir os cursos disponibilizados para você",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

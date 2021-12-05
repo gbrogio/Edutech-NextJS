@@ -81,10 +81,6 @@ export const AuthProvider = function ({ children }) {
   const deleteAccount = () => {
     try {
       setLoading(true);
-      authParams.deleteProv.reauthenticateWithCredential(
-        authParams.auth.currentUser,
-        new authParams.deleteProv.AuthCredential(),
-      );
       authParams.deleteUser(authParams.auth.currentUser).then(() => {
         destroyCookie(undefined, 'EDUTECH_GBROGIO_COOKIE');
       });

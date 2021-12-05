@@ -52,8 +52,9 @@ Link do Projeto: [Figma](https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edute
 Link do Site: [edutech-gbrogio.vercel.app](https://www.edutech-gbrogio.vercel.app)
 
 obs: Infelizmente, até o momento, na busca por séries apenas a opção
-"1° ano Ensino Médio" está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
-
+"1°, 2º e 3º ano Ensino Médio" está funcionado. Isso devido a api utilizada não fornecer os cursos das séries: 6º, 7º, 8º e 9º.
+caso o seu curso não esteja aparecendo, ou apareça um curso a mais do previsto. considere informar em:
+[![Gmail Badge](https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:guilhermebrogio.ps@gmail.com)](mailto:guilhermebrogio.ps@gmail.com)
 
 # <h1 id="PreRequisitos">👌 Pré-requisitos</h1>
 <p>Antes de Começar você precisa ter instalado em seu computador as seguintes ferramentas:

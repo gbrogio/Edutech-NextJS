@@ -137,7 +137,7 @@ export const navLeft = (verifyTabIndex, LinkCp, router) => (
     <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=1+ano+ensino+medio"
-      ariaLabel="1 de 1,"
+      ariaLabel="1 de 3,"
       iD={{
         get: 'noUnder',
         lid: '1anoEM',
@@ -146,25 +146,25 @@ export const navLeft = (verifyTabIndex, LinkCp, router) => (
         router.asPath === '/courses?=1+ano+ensino+medio'
       }
       isInternal={
-        false
+        router.asPath === '/courses?=1+ano+ensino+medio'
       }
     >
       1º ano - Ensino Médio
     </LinkCp>
 
-    {/* <LinkCp // Não foi possivel encontrar os cursos para as séries abaixo
+    <LinkCp
       tabIndex={verifyTabIndex}
       hRef="/courses?=2+ano+ensino+medio"
-      ariaLabel="6 de 7,"
+      ariaLabel="2 de 3,"
       iD={{
         get: 'noUnder',
         lid: '2anoEM',
       }}
       isActive={
-        false
+        router.asPath === '/courses?=2+ano+ensino+medio'
       }
       isInternal={
-        false
+        router.asPath === '/courses?=2+ano+ensino+medio'
       }
     >
       2º ano - Ensino Médio
@@ -172,20 +172,20 @@ export const navLeft = (verifyTabIndex, LinkCp, router) => (
 
     <LinkCp
       tabIndex={verifyTabIndex}
-      ariaLabel="7 de 7,"
+      ariaLabel="3 de 3,"
       hRef="/courses?=3+ano+ensino+medio"
       iD={{
         get: 'noUnder',
         lid: '3anoEM',
       }}
       isActive={
-        false
+        router.asPath === '/courses?=3+ano+ensino+medio'
       }
       isInternal={
-        false
+        router.asPath === '/courses?=3+ano+ensino+medio'
       }
     >
       3º ano - Ensino Médio
-    </LinkCp> */}
+    </LinkCp>
   </>
 );

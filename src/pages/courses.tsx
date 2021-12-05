@@ -121,7 +121,6 @@ const Courses: React.FC = () => {
       });
     },
 
-    // Não foi possivel encontrar os cursos para as séries abaixo
     anoensinomedio2(data) {
       allCourses.push(data[1]);
       setCookie(null, 'SEARCH_COOKIE', '2º ano Ensino Médio', {
@@ -136,6 +135,7 @@ const Courses: React.FC = () => {
         path: '/',
       });
     },
+    // Não foi possivel encontrar os cursos para as séries abaixo
     ano9(data) {
       allCourses.push(data[6]);
       setCookie(null, 'SEARCH_COOKIE', '9º ano', {
@@ -169,9 +169,7 @@ const Courses: React.FC = () => {
   const removeDuplicate = () => {
     for (let i = 0; i < allCourses[0].length; i++) {
       allCSearched.push(allCourses[0][i]);
-      allCFiltered = allCSearched.filter((item, duplicate) => {
-        allCSearched.indexOf(item) === duplicate;
-      });
+      allCFiltered = allCSearched;
     }
   };
   // faz a verificação para executar a procura pela api a api
@@ -283,8 +281,8 @@ const Courses: React.FC = () => {
               // '8º ano', // Não foi possivel encontrar os cursos para essa série
               // '9º ano', // Não foi possivel encontrar os cursos para essa série
               '1º ano Ensino Médio',
-              // '2º ano Ensino Médio', // Não foi possivel encontrar os cursos para essa série
-              // '3º ano Ensino Médio', // Não foi possivel encontrar os cursos para essa série
+              '2º ano Ensino Médio',
+              '3º ano Ensino Médio',
             ],
           }}
         />

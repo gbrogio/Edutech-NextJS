@@ -213,13 +213,19 @@ const About: React.FC = () => {
             style={{ marginTop: '6px' }}
             aria-label="
               observação: Infelizmente, até o momento, na busca por séries apenas a opção
-              primeiro ano Ensino Médio está funcionado. Isso devido a api utilizada não fornecer os cursos dessas séries.
+              primeiro, segundo e terceiro ano Ensino Médio está funcionado. Isso devido a api
+              utilizada não fornecer os cursos das séries: 6º, 7º, 8º e 9º.
+              caso o seu curso não esteja aparecendo, ou apareça um curso a mais
+              do previsto. considere informar em:
             "
           >
             obs: Infelizmente, até o momento, na busca por séries apenas a opção
-            &quot;1° ano Ensino Médio&quot; está funcionado. Isso devido a api utilizada
-            não fornecer os cursos dessas séries.
+            &quot;1°, 2º e 3º ano Ensino Médio&quot; está funcionado. Isso devido a api
+            utilizada não fornecer os cursos das séries: 6º, 7º, 8º e 9º.
+            caso o seu curso não esteja aparecendo, ou apareça um curso a mais
+            do previsto. considere informar em:
           </p>
+          <LinkA href="mailto:guilhermebrogio.ps@gmail.com" tabIndex={0} role="link" aria-label="ou mande um email para guilhermebrogio.ps@gmail.com"><img style={{ marginTop: '1rem' }} src="https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:guilhermebrogio.ps@gmail.com" alt="Gmail Badge" /></LinkA>
         </Paragraph>
       </section>
       <span className="line" />
