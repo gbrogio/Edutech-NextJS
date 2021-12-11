@@ -25,7 +25,7 @@ export default createGlobalStyle`
     opacity: .7;
   }
   .padding {
-    padding: 5rem;
+    padding: 3rem 0;
   }
   .inLine{
     display: inline;
