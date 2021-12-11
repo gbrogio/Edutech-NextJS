@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 
     if (!isNav) { //  se a navegação esquerda for falsa
       buttonMenu.checked = false; // Retire o menu
-      document.documentElement.style.overflow = 'scroll'; // habilita o scroll da pagina
+      document.documentElement.style.overflowY = 'scroll'; // habilita o scroll da pagina
 
       if (Content.tabIndex === 0) {
         Content.focus(); // colocando o foco depois da header
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
         Elm.setAttribute('tabindex', '0');
       });
     } else { //  se a navegação esquerda estiver ativada
-      document.documentElement.style.overflow = isWidth < 425 ? 'hidden' : 'scroll'; // retira o scroll da pagina
+      document.documentElement.style.overflowY = isWidth < 425 ? 'hidden' : 'scroll'; // retira o scroll da pagina
       buttonMenu.checked = true; // ative o menu
       navLeftMenu.focus(); // e coloque o foco no menu
       navLeftMenu.style.visibility = 'visible'; // habilite o menu
