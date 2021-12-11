@@ -35,8 +35,8 @@
   - [X] 📖 Sair da Conta
   - [X] 📖 Deletar Usuário
 - [X] 📖 Componentes
-  - [ ] 📖 Cartão de Cursos
-  - [ ] 📖 Botão Acessibilidade
+  - [X] 📖 Cartão de Cursos
+  - [X] 📖 Botão Acessibilidade
 - [X] 📖 Busca por Cursos - Alura
 - [X] 📖 Contraste Tema
 
