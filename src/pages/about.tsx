@@ -142,8 +142,8 @@ const About: React.FC = () => {
           </li>
           <li>
             <li>
-              <input type="checkbox" className="inLine" disabled />
-              <p className="inLine" tabIndex={0} aria-label="item: Componentes, não terminado">📖 Componentes</p>
+              <input type="checkbox" className="inLine" disabled checked />
+              <p className="inLine" tabIndex={0} aria-label="item: Componentes, finalizado">📖 Componentes</p>
             </li>
             <ul style={{ paddingLeft: '2em' }}>
               <li>
@@ -151,8 +151,8 @@ const About: React.FC = () => {
                 <p className="inLine" tabIndex={0} aria-label="item: Cartão de Cursos, finalizado">📖 Cartão de Cursos</p>
               </li>
               <li>
-                <input type="checkbox" className="inLine" disabled />
-                <p className="inLine" tabIndex={0} aria-label="item: Botão Acessibilidade, não feito">📖 Botão Acessibilidade</p>
+                <input type="checkbox" className="inLine" disabled checked />
+                <p className="inLine" tabIndex={0} aria-label="item: Botão Acessibilidade, finalizado">📖 Botão Acessibilidade</p>
               </li>
             </ul>
           </li>
