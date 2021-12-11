@@ -677,8 +677,6 @@ const About: React.FC = () => {
           <LinkA href="mailto:guilhermebrogio.ps@gmail.com" tabIndex={0} role="link" aria-label="ou mande um email para guilhermebrogio.ps@gmail.com"><img style={{ marginTop: '1rem' }} src="https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:guilhermebrogio.ps@gmail.com" alt="Gmail Badge" /></LinkA>
         </Paragraph>
       </section>
-
-      <span className="padding" />
     </LayoutCp>
   );
 };
