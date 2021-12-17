@@ -82,7 +82,7 @@ const createCardCp = async (easterEgg, easterEggImg, pushTo, name, slug, descrip
   const URLSvg = `https://www.alura.com.br/assets/api/cursos/${slug}.svg`;
 
   // pegando cor do logo de cada curso
-  await fetch(URLSvg)
+  fetch(URLSvg)
     .then((response) => response.text())
     .then((template) => {
       const parser = new DOMParser(); // cria uma dom propria para o elemento

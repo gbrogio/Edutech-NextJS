@@ -1,7 +1,6 @@
 /* eslint no-use-before-define: "off", @typescript-eslint/no-use-before-define: "off" */
 
 // importações
-import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import LayoutCp from 'components/Layout';
 import { useRouter } from 'next/router';
@@ -73,15 +72,19 @@ const Courses: React.FC = () => {
           const cardId = Card.attributes[3].textContent; // pega o id do em questão
           document.getElementById(cardId).focus(); /* e define o foco no elemento
           que contenha esse id */
-        }, 1000);
+        }, 1500);
       } else if (word === '' || word === ' ') { //  se não houver pesquisa
         document.getElementById('notCourse').focus(); // define o doco no elemento div#notCourse
       }
     };
     // define a função de pesquisar
-    const searchCourse = () => {
+    const searchCourse = (isBtn: boolean) => {
       if (divC.children.length === 0) {
-        searchedCourse(keyWord); // executa a pesquisa
+        if (isBtn) { // se for o botão de busca clicado
+          searchedCourse(keyWord, true); // executa a pesquisa
+        } else {
+          searchedCourse(keyWord, false); // executa a pesquisa
+        }
         cardFocus(keyWord); // define o foco
       } else {
         cardFocus(keyWord); // define o foco
@@ -90,14 +93,13 @@ const Courses: React.FC = () => {
 
     // executam a função de pesquisar se
     searchBtnSvg.addEventListener('click', () => { // houver click
-      searchCourse();
+      searchCourse(true);
     });
     searchElm.addEventListener('keydown', (event) => { // ou apertar a tecla enter
       if (event.key === 'Enter') {
-        searchCourse();
+        searchCourse(false);
       }
     });
-
     // dependendo da resposta habilitar/desabilitar div#notCourse
     setInterval(() => {
       const divNC = document.getElementById('notCourse'); // elemento de resposta
@@ -110,7 +112,6 @@ const Courses: React.FC = () => {
   });
 
   // integrações com api
-
   // define o que cada valor retornado vaz - infelizmente incompleto
   const acceptedValues = {
     anoensinomedio1(data) {
@@ -208,25 +209,37 @@ const Courses: React.FC = () => {
       });
   }
   // pesquisa
-  const searchedCourse = async (word) => {
+  const createCardFunc = async (course) => {
+    // criando o componente card
+    const elmCard = await createCardCp(
+      false,
+      null,
+      null,
+      course.nome,
+      course.slug,
+      course.tempo_estimado,
+      router,
+    );
+    // colocando os cards na pagina
+    const setElement = await courseSection.appendChild(elmCard);
+
+    return setElement; // enviando os cards como resposta ao cliente
+  };
+  const searchedCourse = async (word: string, showAllCurses: boolean) => {
+    if ((word === '' || word === ' ') && showAllCurses) {
+      allCSearched.map((course) => {
+        createCardFunc(course);
+        word = '';
+      });
+    }
     if (word !== '') {
-      allCFiltered.map(async (course) => {
+      allCFiltered.map((course) => {
         if (course.nome.toLowerCase().includes(word)) {
-          // criando o componente card
-          const elmCard = await createCardCp(
-            false,
-            null,
-            null,
-            course.nome,
-            course.slug,
-            course.tempo_estimado,
-            router,
-          );
+          createCardFunc(course);
           word = '';
-          return courseSection.appendChild(elmCard); // enviando os cards como resposta ao cliente
         }
       });
-      if (keyWord === 'gbrogio') {
+      if (word === 'gbrogio') {
         // criando o componente card
         const elmCard = await createCardCp(
           true,
@@ -238,9 +251,9 @@ const Courses: React.FC = () => {
           router,
         );
 
-        return courseSection.appendChild(elmCard); // enviando os cards como resposta ao cliente
+        courseSection.appendChild(elmCard); // enviando os cards como resposta ao cliente
       }
-      if (keyWord === 'alura') {
+      if (word === 'alura') {
         // criando o componente card
         const elmCard = await createCardCp(
           true,
@@ -252,7 +265,7 @@ const Courses: React.FC = () => {
           router,
         );
 
-        return courseSection.appendChild(elmCard); // enviando os cards como resposta ao cliente
+        courseSection.appendChild(elmCard); // enviando os cards como resposta ao cliente
       }
     }
   };
@@ -312,7 +325,6 @@ const Courses: React.FC = () => {
             <InvalidIcon style={{ marginTop: '2rem' }} />
           </div>
         )}
-
       </section>
       <div className="padding" />
     </LayoutCp>

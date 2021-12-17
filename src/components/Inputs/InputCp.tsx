@@ -22,16 +22,14 @@ export interface inputProps {
 
 // componente
 const InputCp: React.FC<inputProps> = ({
-  inputType, textOptions, selectOptions //  recebendo propriedades
-}) => {
-  return (
-    <Container>
-      {inputType === 'search' ? <>
+  inputType, textOptions, selectOptions, //  recebendo propriedades
+}) => (
+  <Container>
+    {inputType === 'search' ? (
+      <>
         <div className="selectBar">
           <Select name="serie" id="selectBar">
-            {selectOptions.value.map((item) => {
-              return <option key={item}>{item}</option>
-            })}
+            {selectOptions.value.map((item) => <option key={item}>{item}</option>)}
           </Select>
         </div>
 
@@ -44,12 +42,12 @@ const InputCp: React.FC<inputProps> = ({
             aria-required="true"
             required
           />
-          <SearchIcon aria-label="pesquisar" role="button" tabIndex={0} id="searchBtnSvg"/>
+          <SearchIcon aria-label="pesquisar" role="button" tabIndex={0} id="searchBtnSvg" />
         </div>
-      </>: <></>}
+      </>
+    ) : <div />}
 
-    </Container>
-  );
-};
+  </Container>
+);
 
 export default InputCp;

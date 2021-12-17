@@ -161,8 +161,8 @@ const About: React.FC = () => {
             <p className="inLine" tabIndex={0} aria-label="item: Busca por Cursos - Alura, finalizado">📖 Busca por Cursos - Alura</p>
           </li>
           <li>
-            <input type="checkbox" className="inLine" disabled />
-            <p className="inLine" tabIndex={0} aria-label="item: Contraste Tema, não feito">📖 Contraste Tema</p>
+            <input type="checkbox" className="inLine" disabled checked/>
+            <p className="inLine" tabIndex={0} aria-label="item: Contraste Tema, finalizado">📖 Contraste Tema</p>
           </li>
         </ul>
       </section>

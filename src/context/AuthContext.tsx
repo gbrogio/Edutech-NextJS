@@ -81,9 +81,7 @@ export const AuthProvider = function ({ children }) {
   const deleteAccount = () => {
     try {
       setLoading(true);
-      authParams.deleteUser(authParams.auth.currentUser).then(() => {
-        destroyCookie(undefined, 'EDUTECH_GBROGIO_COOKIE');
-      });
+      authParams.auth.currentUser.delete();
     } finally {
       setLoading(false);
     }
