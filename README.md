@@ -202,6 +202,5 @@ Onde o NodeJS, foi a tecnologia utilizada para manter o Next.JS e outros.<br>
  <sub><b>Guilherme Brogio</b></sub></a> <a href="https://cursos.alura.com.br/user/gbrogio" title="GBrogio">🚀</a>
 
 Feito de 💜 por Guilherme Brogio <br>
-Manda um "oi!"👋🏽 lá no nosso [server do discord](https://discord.gg/ANAWECH3UP)!
 
 [![Gmail Badge](https://img.shields.io/badge/-guilhermebrogio.ps@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:guilhermebrogio.ps@gmail.com)](mailto:guilhermebrogio.ps@gmail.com)
