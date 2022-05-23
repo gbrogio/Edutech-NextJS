@@ -1,28 +1,29 @@
 export interface IDefaultTheme {
-  title: string;
+  name: string;
+  invertPercent: number;
 
-  invert: number;
   fonts: {
+    primary: string;
     monospace: string;
   };
   colors: {
-    default: string;
-    background: string;
-    secondary: string;
-    primary: string;
-    success: string;
-    header: string;
-    error: string;
-    text: string;
     line: string;
-    loading400: string;
-    loading500: string;
     card: string;
+    text: string;
+    error: string;
+    header: string;
+    gray400: string;
+    gray500: string;
+    success: string;
+    shadows: string;
+    default: string;
+    primary: string;
+    secondary: string;
+    background: string;
   };
-  shadows: {
-    color: string;
-    bottom: string;
-    right: string;
+  shadowsDirection: {
+    leftToRight: string;
+    topToBottom: string;
   };
   mediaQueries: {
     xs: string;
