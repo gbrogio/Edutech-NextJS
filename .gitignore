@@ -1,0 +1,8 @@
+# ENV
+.env.local
+
+# PACKAGES
+node_modules
+
+# NEXT.JS
+.next
