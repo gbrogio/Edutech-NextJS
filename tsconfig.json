@@ -24,8 +24,8 @@
       "@locales/*": ["locales/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@globalStyles/*": ["src/styles/global/*"],
-      "@globalStyles": ["src/styles/global/index.ts"],
+      "@globalStyles/*": ["src/styles/globals/*"],
+      "@globalStyles": ["src/styles/globals/index.ts"],
       "@stylesComponents/*": ["src/styles/components/*"]
     }
   },
