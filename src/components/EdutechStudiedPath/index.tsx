@@ -30,14 +30,11 @@ export const EdutechStudiedPath = ({
         <SmallTextCSS>{schoolYear}</SmallTextCSS>
       </SubTitleCSS>
       <DescriptionCSS>{children}</DescriptionCSS>
-      <Link
-        href="https://www.educacao.pr.gov.br/programacao"
-        target="_blank"
-      >
-        <a>
-          {t('home.read-more-text')}
-        </a>
+
+      <Link href="https://www.educacao.pr.gov.br/programacao" target="_blank">
+        <a>{t('home.read-more-text')}</a>
       </Link>
+
       {hasLine && <SubLineCSS />}
     </ContainerCSS>
   );
