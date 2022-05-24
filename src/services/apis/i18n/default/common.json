@@ -1,0 +1,96 @@
+{
+  "infinity-scroll-loader-text": "Carregando...",
+  "links": {
+    "home": "Início",
+    "search-courses": "Pesquisar cursos",
+    "about": "Sobre"
+  },
+  "home": {
+    "title": "Sobre o EduTech",
+    "description": "O Programa EduTech é uma iniciativa da Secretaria de Estado da Educação e do Esporte, tal iniciativa tem como objetivo a formação de estudantes na área de tecnologia e inovação para o desenvolvimento de projetos significativos à comunidade. Em parceria com a plataforma Alura, onde os cursos são disponibilizados, procuram mostrar o melhor de cada aluno e ajuda-los a serem protagonistas na aplicação de estratégias para resolução de problemas a seus futuros empregos, ou a sua comunidade como um todo.",
+    "studied-paths": {
+      "title": "Trilhas de Estudo",
+      "games-animation": {
+        "title": "Games e Animação",
+        "hs-year": " - 6º ao 9º ano",
+        "description": "Nesta trilha, aprenderemos a criar jogos 2D e animações. Vamos pensar e criar a lógica, visual, história, detalhes e regras de um jogo e outros projetos para que você possa curtir com seus amigos e familiares. Na parte de animações serão desenvolvidos efeitos especiais, a física por trás do funcionamento de personagens e a integração com outras multimídias..."
+      },
+      "front-end": {
+        "title": "FRONT-END com HTML e CSS",
+        "hs-year": " - 1º ano, Ensino Médio",
+        "description": "Nesta trilha, aprenderemos como a lógica de programação funciona e como aplicá-la na construção de site utilizando HTML5, CSS3 e Javascript. Essas linguagens são largamente utilizadas hoje no mundo da tecnologia..."
+      },
+      "javascript-development": {
+        "title": "Desenvolvimento de aplicações baseado em JavaScript",
+        "hs-year": " - 2º ano, Ensino Médio",
+        "description": "Nesta trilha, aprenderemos como a lógica de programação funciona e como aplicá-la na construção de páginas web para celulares e tablets, a partir do conceito de Mobile First, que pensa como aplicações podem rodar em diversos tipos de equipamentos..."
+      },
+      "data-science": {
+        "title": "Data Science (Ciência de Dados)",
+        "hs-year": " - 2º ano, Ensino Médio",
+        "description": "Nesta trilha vamos estudar o assunto que mais cresce na área da tecnologia atualmente. Data Science é a ciência que as empresas terão necessidade no futuro próximo, visto o volume de dados produzidos, gerados e armazenados por todos na atualidade..."
+      },
+      "java-programming": {
+        "title": "Programação em JAVA",
+        "hs-year": " - 3º ano, Ensino Médio",
+        "description": "Nesta trilha, você vai estudar uma das linguagens mais utilizadas e importantes ao longo das últimas décadas no mundo da programação. O sistema Android, utilizado na maioria dos celulares e tablets, usa Java. Aqui, vamos aprender a criar interfaces, a armazenar informações  e desenvolver aplicações completas..."
+      },
+      "python-programming": {
+        "title": "Programação em Python",
+        "hs-year": " - 3º ano, Ensino Médio",
+        "description": "Nesta trilha, você vai estudar a linguagem de programação mais querida de devs na atualidade: o Python. Com ela é possível aplicar os conceitos básicos de programação até criar jogos, mesmo se estiver começando agora no mundo da programação..."
+      }
+    },
+    "read-more-text": "Saiba mais",
+    "platform": {
+      "title": "Alura",
+      "description": "Contando com uma percepção de Dev em T, isto é, especialista x generalista é uma plataforma de cursos online que hoje já conta com mais de 1.200 cursos, navegue por diversas tecnologia, como UX, Marketing Digital ou Data Science, por exemplo.",
+      "link-text": "Acesse a plataforma"
+    }
+  },
+  "accessibility-popover": {
+    "content": {
+      "contrast-theme-text": "Retirar Contraste",
+      "default-theme-text": "Colocar Contraste",
+      "expand-font-size-text": "Aumentar Fonte",
+      "reduce-font-size-text": "Diminuir Fonte"
+    },
+    "trigger": {
+      "aria-label": "Acessibilidade"
+    }
+  },
+  "course-card": {
+    "name": "Nome do curso",
+    "estimated-time": "Tempo estimado do curso"
+  },
+  "header": {
+    "sidebar": {
+      "sidebar-years-hs-text": "Clique no ano que você estuda",
+      "sidebar-trigger-aria-label": "Menu lateral"
+    }
+  },
+  "form": {
+    "auto-complete-input": {
+      "label": "Procure pelos cursos",
+      "placeholder": "Nome do curso vai aqui..."
+    },
+    "select": {
+      "label": "Selecione o ano que você estuda",
+      "options": {
+        "all": "Todos os cursos",
+        "first-year-hs": "1º ano - Ensino Médio",
+        "second-year-hs": "2º ano - Ensino Médio",
+        "third-year-hs": "3º ano - Ensino Médio"
+      }
+    }
+  },
+  "fetch-status": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro ao carregar os cursos. Tente novamente mais tarde.",
+    "no-result": "Nenhum curso encontrado.",
+    "ready": "Cursos prontos para serem exibidos."
+  },
+  "error": {
+    "title": "Ops. Essa página não existe"
+  }
+}
