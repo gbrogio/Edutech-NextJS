@@ -7,7 +7,7 @@ export function invalidCharacterChecker(
   }
 ): {
   isInvalid: boolean;
-  type: string;
+  type: 'invalid-characters' | 'blank-text' | 'spaces' | 'correct';
   invalidCharacters: string[];
 } {
   const { permitBlankText, permitSpaces, invalidCharacters } = options;
