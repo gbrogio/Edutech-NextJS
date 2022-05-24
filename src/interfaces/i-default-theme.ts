@@ -1,21 +1,31 @@
-export interface IDefaultTheme {
-  name: string;
-  invertPercent: number;
-
+export interface ISharedTheme {
   fonts: {
     primary: string;
     monospace: string;
   };
+  mediaQueries: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+  };
+}
+
+export interface IDefaultTheme extends ISharedTheme {
+  name: string;
+  invertPercent: number;
+
   colors: {
     line: string;
     card: string;
     text: string;
     error: string;
     header: string;
+    shadow: string;
     gray400: string;
     gray500: string;
     success: string;
-    shadows: string;
     default: string;
     primary: string;
     secondary: string;
@@ -24,12 +34,5 @@ export interface IDefaultTheme {
   shadowsDirection: {
     leftToRight: string;
     topToBottom: string;
-  };
-  mediaQueries: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
   };
 }
