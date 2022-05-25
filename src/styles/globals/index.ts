@@ -84,12 +84,10 @@ const Reset = createGlobalStyle`
   }
 `;
 
-const GlobalStyles = {
+export const GlobalStyles = {
   Colors,
   Shadows,
   Fonts,
   Others,
   Reset,
 };
-
-export default GlobalStyles;
