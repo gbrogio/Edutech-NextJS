@@ -1,12 +1,24 @@
 import type { AppProps } from 'next/app';
 
+import { ThemeProvider } from 'styled-components';
+
 import { Layout } from '@components/Layout';
+
+import { defaultTheme } from '@globalStyles/themes/default';
+import { GlobalStyles } from '@globalStyles';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyles.Reset />
+      <GlobalStyles.Colors />
+      <GlobalStyles.Fonts />
+      <GlobalStyles.Shadows />
+      <GlobalStyles.Others />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
