@@ -1,11 +1,13 @@
-import { SubLineCSS } from '@stylesComponents/SeparatorsCSS';
+import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+
 import {
   DescriptionCSS,
   SmallTextCSS,
-  SubTitleCSS
+  SubTitleCSS,
 } from '@stylesComponents/TextCSS';
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+import { SubLineCSS } from '@stylesComponents/SeparatorsCSS';
+
 import { ContainerCSS } from './styles';
 
 export interface EdutechStudiedPathProps {
@@ -19,7 +21,7 @@ export const EdutechStudiedPath = ({
   title,
   schoolYear,
   children,
-  hasLine = true
+  hasLine = true,
 }: EdutechStudiedPathProps) => {
   const { t } = useTranslation();
 
@@ -31,8 +33,12 @@ export const EdutechStudiedPath = ({
       </SubTitleCSS>
       <DescriptionCSS>{children}</DescriptionCSS>
 
-      <Link href="https://www.educacao.pr.gov.br/programacao" target="_blank">
-        <a>{t('home.read-more-text')}</a>
+      <Link
+        href="https://www.educacao.pr.gov.br/programacao"
+        target="_blank"
+        passHref
+      >
+        <a href="replace">{t('home.read-more-text')}</a>
       </Link>
 
       {hasLine && <SubLineCSS />}

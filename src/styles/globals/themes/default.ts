@@ -1,5 +1,6 @@
+import type { IDefaultTheme } from '@interfaces/i-default-theme';
+
 import { DEFAULT_THEME } from '@globalStyles/tokens';
-import { IDefaultTheme } from '@interfaces/i-default-theme';
 import { sharedTheme } from './shared-themes';
 
 export const defaultTheme: IDefaultTheme = {

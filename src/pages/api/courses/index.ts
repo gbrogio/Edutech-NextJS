@@ -1,6 +1,7 @@
-import type { ICourses, ICoursesPtBR } from '@interfaces/i-courses';
-import { getDataFromApi } from '@services/fetchers/use-cases/get-data-use-case';
 import type { NextApiResponse } from 'next';
+import type { ICourses, ICoursesPtBR } from '@interfaces/i-courses';
+
+import { getDataFromApi } from '@services/fetchers/use-cases/get-data-use-case';
 
 export default async function handle(_: unknown, res: NextApiResponse) {
   try {

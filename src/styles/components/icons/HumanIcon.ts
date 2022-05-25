@@ -1,4 +1,5 @@
 import { SettingsAccessibility } from '@styled-icons/material/SettingsAccessibility';
+
 import styled from 'styled-components';
 
 export const HumanIcon = styled(SettingsAccessibility)`

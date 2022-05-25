@@ -1,5 +1,6 @@
+import type { ISharedTheme } from '@interfaces/i-default-theme';
+
 import { BREAKPOINTS, FONTS } from '@globalStyles/tokens';
-import { ISharedTheme } from '@interfaces/i-default-theme';
 
 export const sharedTheme: ISharedTheme = {
   fonts: {
