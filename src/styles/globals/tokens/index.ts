@@ -4,13 +4,13 @@ export const BREAKPOINTS = {
   $SM: 480,
   $MD: 768,
   $LG: 1024,
-  $XL: 1280
+  $XL: 1280,
 };
 
 // fonts-family
 export const FONTS = {
   $PRIMARY: '"Roboto", sans-serif',
-  $MONOSPACE: 'monospace'
+  $MONOSPACE: 'monospace',
 };
 
 // colors

@@ -48,7 +48,7 @@ export const SmallTextCSS = styled.p`
 
 export const LoadingTextCSS = styled.span`
   text-align: center;
-  
+
   margin: 2rem;
   opacity: 0.7;
 `;

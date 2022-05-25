@@ -4,7 +4,7 @@ export function invalidCharacterChecker(
     permitBlankText: boolean;
     permitSpaces: boolean;
     invalidCharacters: string[];
-  }
+  },
 ): {
   isInvalid: boolean;
   type: 'invalid-characters' | 'blank-text' | 'spaces' | 'correct';
@@ -14,7 +14,7 @@ export function invalidCharacterChecker(
 
   const invalidCharactersRegex = new RegExp(
     `[${invalidCharacters.join('')}]`,
-    'g'
+    'g',
   );
 
   const invalidCharactersFound = text.match(invalidCharactersRegex);
@@ -22,27 +22,27 @@ export function invalidCharacterChecker(
     return {
       isInvalid: true,
       type: 'invalid-characters',
-      invalidCharacters: invalidCharactersFound
+      invalidCharacters: invalidCharactersFound,
     };
   }
   if (!permitBlankText && text.length === 0) {
     return {
       isInvalid: true,
       type: 'blank-text',
-      invalidCharacters: []
+      invalidCharacters: [],
     };
   }
   if (!permitSpaces && text.match(/\s/g)) {
     return {
       isInvalid: true,
       type: 'spaces',
-      invalidCharacters: []
+      invalidCharacters: [],
     };
   }
 
   return {
     isInvalid: false,
     type: 'correct',
-    invalidCharacters: []
+    invalidCharacters: [],
   };
 }

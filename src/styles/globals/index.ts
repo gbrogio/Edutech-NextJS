@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const Colors = createGlobalStyle`
   :root {
@@ -24,8 +24,10 @@ const Colors = createGlobalStyle`
 `;
 const Shadows = createGlobalStyle`
   :root {
-    --shadow-left-to-right: ${(props) => props.theme.shadowsDirection.leftToRight};
-    --shadow-top-to-bottom: ${(props) => props.theme.shadowsDirection.topToBottom};
+    --shadow-left-to-right: ${(props) =>
+      props.theme.shadowsDirection.leftToRight};
+    --shadow-top-to-bottom: ${(props) =>
+      props.theme.shadowsDirection.topToBottom};
   }
 `;
 const Fonts = createGlobalStyle`

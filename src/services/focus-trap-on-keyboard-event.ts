@@ -1,11 +1,11 @@
 export function focusTrapOnKeyboardEvent(
-  event: React.KeyboardEvent<HTMLElement>
+  event: React.KeyboardEvent<HTMLElement>,
 ) {
   if (event.key !== 'Tab') return false;
 
   const focusableModalElements =
     event.currentTarget.querySelectorAll(
-      'a[href], button:not([disabled]), textarea, input, select'
+      'a[href], button:not([disabled]), textarea, input, select',
     ) || [];
   const firstElement = focusableModalElements[0] as HTMLElement;
   const lastElement = focusableModalElements[

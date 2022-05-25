@@ -23,7 +23,7 @@ export const contrastTheme: IDefaultTheme = {
   },
   shadowsDirection: {
     topToBottom: `0 0 20px 5px rgba(${CONTRAST_THEME.$SHADOW}, 0.1)`,
-    leftToRight: `0 4.5rem 1.5rem 3px rgba(${CONTRAST_THEME.$SHADOW}, 0.1)`
+    leftToRight: `0 4.5rem 1.5rem 3px rgba(${CONTRAST_THEME.$SHADOW}, 0.1)`,
   },
-  ...sharedTheme
-}
+  ...sharedTheme,
+};

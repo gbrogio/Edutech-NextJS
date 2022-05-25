@@ -9,7 +9,7 @@ export async function searchInData<T>(data: T[], searchKey: string) {
     const noResultsError = {
       isInvalid: true,
       type: 'no-result',
-      invalidCharacters: []
+      invalidCharacters: [],
     };
 
     throw noResultsError;

@@ -10,7 +10,7 @@ const sharedStyles = css`
 
 export const HamburgerIcon = styled.span.attrs({
   ariaHidden: true,
-  className: 'hamburger-icon'
+  className: 'hamburger-icon',
 })`
   position: relative;
   display: inline-block;

@@ -23,7 +23,7 @@ export const defaultTheme: IDefaultTheme = {
   },
   shadowsDirection: {
     topToBottom: `0 0 20px 5px rgba(${DEFAULT_THEME.$SHADOW}, 0.1)`,
-    leftToRight: `0 4.5rem 1.5rem 3px rgba(${DEFAULT_THEME.$SHADOW}, 0.1)`
+    leftToRight: `0 4.5rem 1.5rem 3px rgba(${DEFAULT_THEME.$SHADOW}, 0.1)`,
   },
-  ...sharedTheme
-}
+  ...sharedTheme,
+};
