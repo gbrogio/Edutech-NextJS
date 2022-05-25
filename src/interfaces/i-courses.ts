@@ -7,6 +7,5 @@ export interface ICourses {
 export interface ICoursesPtBR {
   slug: string;
   nome: string;
-  // eslint-disable-next-line camelcase
   tempo_estimado: string;
 }
