@@ -1,16 +1,19 @@
+import type { GetServerSideProps, NextPage } from 'next';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { EdutechStudiedPath } from '@components/EdutechStudiedPath';
-import { BREAKPOINTS } from '@globalStyles/tokens';
 import { setCurrentLocale } from '@services/apis/i18n/set-current-locale';
 import { LineCSS } from '@stylesComponents/SeparatorsCSS';
 import { DescriptionCSS, TitleCSS } from '@stylesComponents/TextCSS';
 import { EDUTECH_STUDIED_PATHS } from '@utils/edutech-studied-paths';
-import type { GetServerSideProps, NextPage } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+
 import { useTheme } from 'styled-components';
+import { BREAKPOINTS } from '@globalStyles/tokens';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -53,12 +56,8 @@ const Home: NextPage = () => {
 
       <section className="studied-paths">
         <TitleCSS>{t('home.studied-paths.title')}</TitleCSS>
-        {EDUTECH_STUDIED_PATHS.map(({ 
-            title, 
-            schoolYear, 
-            description, 
-            id 
-          }, index) => (
+        {EDUTECH_STUDIED_PATHS.map(
+          ({ title, schoolYear, description, id }, index) => (
             <EdutechStudiedPath
               key={id}
               title={t(title)}
@@ -67,7 +66,7 @@ const Home: NextPage = () => {
             >
               {t(description)}
             </EdutechStudiedPath>
-          )
+          ),
         )}
       </section>
 
@@ -76,11 +75,9 @@ const Home: NextPage = () => {
       <section className="platform">
         <TitleCSS>{t('home.platform.title')}</TitleCSS>
         <DescriptionCSS>{t('home.platform.description')}</DescriptionCSS>
-        
-        <Link href="https://www.alura.com.br" target="_blank">
-          <a>
-            {t('home.platform.link-text')}
-          </a>
+
+        <Link href="https://www.alura.com.br" target="_blank" passHref>
+          <a href="replace">{t('home.platform.link-text')}</a>
         </Link>
       </section>
     </>
@@ -90,8 +87,8 @@ const Home: NextPage = () => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(setCurrentLocale(locale!), ['common']))
-    }
+      ...(await serverSideTranslations(setCurrentLocale(locale!), ['common'])),
+    },
   };
 };
 export default Home;
