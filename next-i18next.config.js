@@ -8,6 +8,6 @@ module.exports = {
     defaultLocale: 'default',
     localeDetection: false,
   },
-  localePath: path.resolve('./src/services/api/i18n'),
+  localePath: path.resolve('./src/services/apis/i18n'),
   trailingSlash: true,
 };
