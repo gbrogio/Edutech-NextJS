@@ -12,7 +12,7 @@ export interface ISharedTheme {
   };
 }
 
-export interface IDefaultTheme extends ISharedTheme {
+export interface ITheme extends ISharedTheme {
   name: string;
   invertPercent: number;
 

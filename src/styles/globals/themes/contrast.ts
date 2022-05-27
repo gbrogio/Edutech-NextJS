@@ -1,9 +1,9 @@
-import type { IDefaultTheme } from '@interfaces/i-default-theme';
+import type { ITheme } from '@interfaces/i-theme';
 
 import { CONTRAST_THEME } from '@globalStyles/tokens';
 import { sharedTheme } from './shared-themes';
 
-export const contrastTheme: IDefaultTheme = {
+export const contrastTheme: ITheme = {
   name: 'default',
   invertPercent: 0,
 
