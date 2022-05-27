@@ -6,8 +6,8 @@ module.exports = {
   i18n: {
     locales: ['default', 'pt-br'],
     defaultLocale: 'default',
-    localeDetection: false
+    localeDetection: false,
   },
   localePath: path.resolve('./src/services/api/i18n'),
-  trailingSlash: true
+  trailingSlash: true,
 };
