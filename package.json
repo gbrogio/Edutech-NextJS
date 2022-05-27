@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@styled-icons/boxicons-regular": "^10.38.0",
+    "@styled-icons/fluentui-system-regular": "^10.35.0",
     "@styled-icons/material": "^10.34.0",
     "@styled-icons/material-outlined": "^10.34.0",
+    "@styled-icons/remix-editor": "^10.33.0",
     "axios": "^0.27.2",
     "next": "^12.1.6",
     "next-i18next": "^11.0.0",

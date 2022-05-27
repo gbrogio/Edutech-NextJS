@@ -95,6 +95,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.13.10", "@babel/runtime@^7.14.6":
+  version "7.18.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
+  integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz#8d126c8701fde4d66b264b3eba3d96f07666d155"
@@ -496,6 +503,14 @@
     "@babel/runtime" "^7.15.3"
     "@styled-icons/styled-icon" "^10.6.3"
 
+"@styled-icons/fluentui-system-regular@^10.35.0":
+  version "10.35.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fluentui-system-regular/-/fluentui-system-regular-10.35.0.tgz#41d9400ecb7d1c0b438186aa9864cd2320c53c1b"
+  integrity sha512-DHZRTLw6tGkmG6EOo46iHsta6xx+Gd71iHEg5GTVTsoUtk2ZFHL1GRW9KPnkcPPB6h3/QQE4c36MyHFPvPfjzA==
+  dependencies:
+    "@babel/runtime" "^7.14.6"
+    "@styled-icons/styled-icon" "^10.6.3"
+
 "@styled-icons/material-outlined@^10.34.0":
   version "10.34.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/material-outlined/-/material-outlined-10.34.0.tgz#5da422bc14dbc0ad0b4e7e15153056866f42f37b"
@@ -512,7 +527,15 @@
     "@babel/runtime" "^7.14.0"
     "@styled-icons/styled-icon" "^10.6.3"
 
-"@styled-icons/styled-icon@^10.6.3":
+"@styled-icons/remix-editor@^10.33.0":
+  version "10.33.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/remix-editor/-/remix-editor-10.33.0.tgz#ee348658f2d44cef409004a077f2280620b9307d"
+  integrity sha512-V1jZ3G1J8PaBiIwf2Va7UuEXot8xR39UQ3XNIJNQClnGA04ahTsEC2mpN5pHwr4mkJijXu0Htjhnf/YiWYVsCw==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/styled-icon@^10.6.0", "@styled-icons/styled-icon@^10.6.3":
   version "10.6.3"
   resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.6.3.tgz#eae0e5e18fd601ac47e821bb9c2e099810e86403"
   integrity sha512-/A95L3peioLoWFiy+/eKRhoQ9r/oRrN/qzbSX4hXU1nGP2rUXcX3LWUhoBNAOp9Rw38ucc/4ralY427UUNtcGQ==
