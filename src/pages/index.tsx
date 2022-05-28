@@ -76,8 +76,10 @@ const Home: NextPage = () => {
         <TitleCSS>{t('home.platform.title')}</TitleCSS>
         <DescriptionCSS>{t('home.platform.description')}</DescriptionCSS>
 
-        <Link href="https://www.alura.com.br" target="_blank" passHref>
-          <a href="replace">{t('home.platform.link-text')}</a>
+        <Link href="https://www.alura.com.br" passHref>
+          <a href="replace" target="_blank">
+            {t('home.platform.link-text')}
+          </a>
         </Link>
       </section>
     </>

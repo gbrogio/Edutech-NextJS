@@ -33,12 +33,10 @@ export const EdutechStudiedPath = ({
       </SubTitleCSS>
       <DescriptionCSS>{children}</DescriptionCSS>
 
-      <Link
-        href="https://www.educacao.pr.gov.br/programacao"
-        target="_blank"
-        passHref
-      >
-        <a href="replace">{t('home.read-more-text')}</a>
+      <Link href="https://www.educacao.pr.gov.br/programacao" passHref>
+        <a href="replace" target="_blank">
+          {t('home.read-more-text')}
+        </a>
       </Link>
 
       {hasLine && <SubLineCSS />}
