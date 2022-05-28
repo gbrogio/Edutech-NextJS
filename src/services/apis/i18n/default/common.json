@@ -49,14 +49,14 @@
     }
   },
   "accessibility-popover": {
-    "content": {
-      "contrast-theme-text": "Retirar Contraste",
-      "default-theme-text": "Colocar Contraste",
-      "expand-font-size-text": "Aumentar Fonte",
-      "reduce-font-size-text": "Diminuir Fonte"
+    "panel-title": "Opções de Acessibilidade",
+    "handle-theme": {
+      "label": "Trocar tema",
+      "description": "Troca o tema da pagina"
     },
-    "trigger": {
-      "aria-label": "Acessibilidade"
+    "handle-font-size": {
+      "label": "Trocar tamanho da fonte",
+      "description": "Troca o tamanho da fonte da pagina"
     }
   },
   "course-card": {
