@@ -50,6 +50,7 @@
   },
   "accessibility-popover": {
     "panel-title": "Opções de Acessibilidade",
+    "close-label": "Fechar opções de acessibilidade",
     "handle-theme": {
       "label": "Trocar tema",
       "description": "Troca o tema da pagina"
