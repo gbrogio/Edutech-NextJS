@@ -7,7 +7,8 @@
   },
   "globals": {
     "JSX": true,
-    "React": true
+    "React": true,
+    "NodeJS": true
   },
   "settings": {
     "import/resolver": { "typescript": {} },
