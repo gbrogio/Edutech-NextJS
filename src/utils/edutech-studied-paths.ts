@@ -1,4 +1,4 @@
-import { IEdutechStudiedPaths } from '@interfaces/i-edutech-studied-paths';
+import type { IEdutechStudiedPaths } from '@interfaces/i-edutech-studied-paths';
 
 export const EDUTECH_STUDIED_PATHS: IEdutechStudiedPaths[] = [
   {
