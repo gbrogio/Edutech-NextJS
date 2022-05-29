@@ -19,7 +19,7 @@ export const DEFAULT_THEME = {
   $CARD: 'rgb(255, 255, 255)', //                             white
   $TEXT: 'rgb(033, 033, 033)', //                             black
   $ERROR: 'rgb(215, 054, 040)', //                            red
-  $HEADER: 'rgba(255, 255, 255, 0.60)', //                    white
+  $HEADER: 'rgba(255, 255, 255, 0.90)', //                    white
   $SHADOW: '000, 000, 000', //            rgb(000, 000, 000)  black
   $GRAY400: 'rgb(238, 238, 238)', //                          white
   $GRAY500: 'rgb(221, 221, 221)', //                          grey-white
