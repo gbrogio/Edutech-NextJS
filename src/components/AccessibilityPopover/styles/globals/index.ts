@@ -21,6 +21,8 @@ export const RootCSS = styled.div<RootCSSProps>`
     accessibilityTheme.colors.accessibilityPopoverPrimary};
   --accessibility-popover-color-icon: ${({ accessibilityTheme }) =>
     accessibilityTheme.colors.accessibilityPopoverIcon};
+  --accessibility-trigger-color-shadow: ${({ accessibilityTheme }) =>
+    accessibilityTheme.colors.accessibilityTriggerShadow};
 
   position: fixed;
   display: flex;
