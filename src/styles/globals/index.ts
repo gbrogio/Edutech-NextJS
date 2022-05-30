@@ -53,8 +53,9 @@ const Reset = createGlobalStyle`
 
   body {
     overflow: hidden scroll;
-
     font-family: var(--font-primary);
+
+    background-color: var(--color-background);
     color: var(--color-text);
   }
 
