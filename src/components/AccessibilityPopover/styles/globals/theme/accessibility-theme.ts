@@ -8,5 +8,6 @@ export const AccessibilityTheme: IAccessibilityTheme = {
     accessibilityPanelShadow: '#18181B50',
     accessibilityPanelText: '#E5E7EB',
     accessibilityContentBackground: '#27272A',
+    accessibilityTriggerShadow: '#18181B50',
   },
 };
