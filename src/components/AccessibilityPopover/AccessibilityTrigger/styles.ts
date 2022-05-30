@@ -11,7 +11,7 @@ export const ContainerCSS = styled.button`
 
   transition: border-radius 0.5s ease-in-out;
 
-  box-shadow: 0 0.25rem 2rem var(--accessibility-popover-color-primary);
+  box-shadow: 0 0.25rem 2rem var(--accessibility-trigger-color-shadow);
 
   color: var(--accessibility-popover-color-text);
   background-color: var(--accessibility-popover-color-primary);
