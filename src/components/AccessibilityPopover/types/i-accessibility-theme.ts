@@ -6,5 +6,6 @@ export type IAccessibilityTheme = {
     accessibilityPanelShadow: string;
     accessibilityPanelText: string;
     accessibilityContentBackground: string;
+    accessibilityTriggerShadow: string;
   };
 };
