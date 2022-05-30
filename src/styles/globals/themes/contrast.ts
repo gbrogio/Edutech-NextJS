@@ -4,7 +4,7 @@ import { CONTRAST_THEME } from '@globalStyles/tokens';
 import { sharedTheme } from './shared-themes';
 
 export const contrastTheme: ITheme = {
-  name: 'default',
+  name: 'contrast',
   invertPercent: 0,
 
   colors: {
