@@ -76,8 +76,8 @@ export const AccessibilityPanel = <T extends IAccessibilityOptions>({
       <footer className="mt-6">
         <p lang="pt-br">
           <span>Feito de &#128153; por </span>
-          <Link href="https://github.com/gbrogio" passHref onClick={closePanel}>
-            <a href="replace" target="_blank">
+          <Link href="https://github.com/gbrogio" passHref>
+            <a href="replace" target="_blank" onClick={closePanel}>
               GBrogio
             </a>
           </Link>
