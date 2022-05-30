@@ -41,8 +41,8 @@ const Home: NextPage = () => {
         </div>
         <div className="image">
           <Image
-            src={`/img/edutech-${currentTheme}.png`}
-            alt=""
+            src={`/static/imgs/edutech-${currentTheme}.png`}
+            alt="Programa EduTech - logo"
             layout={width <= BREAKPOINTS.$SM ? 'responsive' : 'fixed'}
             width={364}
             height={373}
