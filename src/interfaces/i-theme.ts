@@ -13,7 +13,7 @@ export interface ISharedTheme {
 }
 
 export interface ITheme extends ISharedTheme {
-  name: string;
+  name: 'default' | 'contrast';
   invertPercent: number;
 
   colors: {
