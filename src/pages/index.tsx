@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetServerSideProps } from 'next';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -8,29 +8,39 @@ import Link from 'next/link';
 
 import { EdutechStudiedPath } from '@components/EdutechStudiedPath';
 import { setCurrentLocale } from '@services/apis/i18n/set-current-locale';
+import { FetcherCookie } from '@services/fetchers/fetcher-cookie';
 import { LineCSS } from '@stylesComponents/SeparatorsCSS';
 import { DescriptionCSS, TitleCSS } from '@stylesComponents/TextCSS';
 import { EDUTECH_STUDIED_PATHS } from '@utils/edutech-studied-paths';
 
-import { useTheme } from 'styled-components';
 import { BREAKPOINTS } from '@globalStyles/tokens';
 
-const Home: NextPage = () => {
+import { useLayoutContext } from '@contexts/Layout/useLayoutContext';
+import edutechContrast from '../assets/imgs/edutech-contrast.png';
+import edutechDefault from '../assets/imgs/edutech-default.png';
+
+interface HomeProps {
+  theme: 'default' | 'contrast';
+}
+
+const Home = ({ theme }: HomeProps) => {
   const { t } = useTranslation();
-  const { name: currentTheme } = useTheme();
+
+  const [currentTheme, setCurrentTheme] = useState(theme);
+  const { cTheme } = useLayoutContext();
 
   const [width, setWidth] = useState(0);
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  };
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    setWidth(window.innerWidth);
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', () => setWidth(window.innerWidth));
     };
   }, []);
+  useEffect(() => {
+    setCurrentTheme(cTheme);
+  }, [cTheme]);
 
   return (
     <>
@@ -41,11 +51,11 @@ const Home: NextPage = () => {
         </div>
         <div className="image">
           <Image
-            src={`/static/imgs/edutech-${currentTheme}.png`}
+            src={currentTheme === 'contrast' ? edutechContrast : edutechDefault}
             alt="Programa EduTech - logo"
             layout={width <= BREAKPOINTS.$SM ? 'responsive' : 'fixed'}
-            width={364}
-            height={373}
+            width={500}
+            height={525}
             draggable={false}
             priority
           />
@@ -86,10 +96,16 @@ const Home: NextPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const cookie = FetcherCookie(ctx);
+  const theme = cookie.get('THEME');
+
   return {
     props: {
-      ...(await serverSideTranslations(setCurrentLocale(locale!), ['common'])),
+      theme,
+      ...(await serverSideTranslations(setCurrentLocale(ctx.locale!), [
+        'common',
+      ])),
     },
   };
 };
