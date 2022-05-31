@@ -5,11 +5,11 @@ import { FetcherCookie } from '@services/fetchers/fetcher-cookie';
 export function usePersistedStateCookie<T extends string>(
   key: string,
   defaultValue: T,
-): [string, React.Dispatch<React.SetStateAction<string>>] {
+): [T, React.Dispatch<React.SetStateAction<T>>] {
   const cookie = FetcherCookie();
 
   const [state, setState] = useState(() => {
-    const value = cookie.get(key);
+    const value = cookie.get(key) as T;
     return value || defaultValue;
   });
 
