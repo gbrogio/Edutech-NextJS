@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { IAccessibilityPopoverProps } from './types/i-accessibility-popover';
 import type { IAccessibilityOptions } from './types/i-accessibility-options';
@@ -29,6 +29,16 @@ export const AccessibilityPopover = <
   const [panelOpen, setPanelOpen] = useState(false);
   const [hasI18n] = useState(i18n !== undefined);
 
+  useEffect(() => {
+    if (!panelOpen) {
+      (
+        document.getElementById(
+          'accessibility-trigger-:t-1:',
+        ) as HTMLButtonElement
+      )?.focus();
+    }
+  }, [panelOpen]);
+
   return (
     <>
       <RootCSS
@@ -57,6 +67,7 @@ export const AccessibilityPopover = <
           aria-expanded={panelOpen}
           style={styleTrigger}
           hasI18n={hasI18n}
+          id="accessibility-trigger-:t-1:"
           onClick={() => setPanelOpen(!panelOpen)}
         />
       </RootCSS>
