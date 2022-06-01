@@ -37,7 +37,7 @@ export const ContainerCSS = styled.button`
     }
   }
   &:focus {
-    box-shadow: 0 0 0 4px var(--accessibility-panel-color-background),
-      0 0 0 8px var(--accessibility-popover-color-primary);
+    box-shadow: 0 0 0 5px var(--accessibility-panel-color-background),
+      0 0 0 7px var(--accessibility-popover-color-primary);
   }
 `;

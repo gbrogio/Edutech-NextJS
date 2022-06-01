@@ -58,7 +58,7 @@ export const RootCSS = styled.div<RootCSSProps>`
     }
     &:focus {
       border-radius: 0.2rem;
-      outline: black solid 3px;
+      outline: var(--accessibility-panel-color-text) solid 2px;
     }
   }
 

@@ -88,7 +88,7 @@ export const ContentCSS = styled.div.attrs({
     border-radius: inherit;
 
     transition: all 0.15s linear;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
 
     &:hover,
     &:focus {
