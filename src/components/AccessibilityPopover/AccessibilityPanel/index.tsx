@@ -28,7 +28,6 @@ export const AccessibilityPanel = <T extends IAccessibilityOptions>({
   return (
     <PanelCSS
       id="accessibility-panel-:p-1:"
-      aria-labelledby="accessibility-trigger-:p-1:"
       aria-label={texts.panelTitle}
       style={style}
       tabIndex={0}
