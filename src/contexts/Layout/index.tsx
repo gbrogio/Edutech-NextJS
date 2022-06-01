@@ -2,6 +2,7 @@ import { createContext, useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { Accessibility } from '@components/Accessibility';
+import { Header } from '@components/Header';
 import { usePersistedStateCookie } from '@hooks/usePersistedStateCookie';
 
 import { contrastTheme } from '@globalStyles/themes/contrast';
@@ -51,7 +52,7 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
         <GlobalStyles.Shadows />
         <GlobalStyles.Others />
 
-        <header />
+        <Header />
 
         <Accessibility
           handleFontSize={() =>
