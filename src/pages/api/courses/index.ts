@@ -6,7 +6,7 @@ import { getDataFromApi } from '@services/fetchers/use-cases/get-data-use-case';
 export default async function handle(_: unknown, res: NextApiResponse) {
   try {
     const courses = await getDataFromApi<ICoursesPtBR[]>(
-      process.env.ALURA_API_URL!,
+      process.env.COURSES_API_URL!,
     ).catch(() => Promise.reject());
 
     const coursesKeyChanged: ICourses[] = [] as ICourses[];
