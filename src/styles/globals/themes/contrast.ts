@@ -5,7 +5,7 @@ import { sharedTheme } from './shared-themes';
 
 export const contrastTheme: ITheme = {
   name: 'contrast',
-  invertPercent: 0,
+  invertPercent: 100,
 
   colors: {
     line: CONTRAST_THEME.$LINE,
