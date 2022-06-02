@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt-br">
+      <Html lang={this.props.locale}>
         <Head>
           {/* METAS */}
           <meta charSet="UTF-8" />
