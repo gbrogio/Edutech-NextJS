@@ -8,6 +8,10 @@ import { CoursesProvider } from '@contexts/Courses';
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
+      {/* LOGO */}
+      <link rel="icon" href="/static/imgs/edutech-ico.png" />
+
+      {/* TITLE */}
       <title>EduTech - GBrogio</title>
     </Head>
     <LayoutProvider>

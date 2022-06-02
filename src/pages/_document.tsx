@@ -51,9 +51,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* LOGO */}
-          <link rel="icon" href="" />
-
           <meta
             name="description"
             content="Busque pelos seu cursos de programação aqui - Alunos EduTech -"
