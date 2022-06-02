@@ -24,7 +24,9 @@ const NavigationSection = () => {
             <Anchor href="/courses">{t('links.search-courses')}</Anchor>
           </li>
           <li>
-            <Anchor href="/about">{t('links.about')}</Anchor>
+            <Anchor href="https://github.com/gbrogio/Edutech-NextJS">
+              {t('links.about')}
+            </Anchor>
           </li>
         </ul>
       </nav>

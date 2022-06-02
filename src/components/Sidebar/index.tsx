@@ -66,7 +66,7 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           id="sidebar-trigger-:t-2:"
           onClick={() => setSidebarOpen(false)}
         />
-        <Anchor secondary href="/about">
+        <Anchor secondary href="https://github.com/gbrogio/Edutech-NextJS">
           {t('links.about')}
         </Anchor>
         <LineCSS />
