@@ -1,4 +1,4 @@
-import type { ISharedTheme } from '@interfaces/i-default-theme';
+import type { ISharedTheme } from '@interfaces/i-theme';
 
 import { BREAKPOINTS, FONTS } from '@globalStyles/tokens';
 
