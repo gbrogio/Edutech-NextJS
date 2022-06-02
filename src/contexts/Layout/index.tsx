@@ -68,7 +68,9 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
 
         <Header />
         <MainCSS>{children}</MainCSS>
-        <FooterCSS />
+        <FooterCSS>
+          <span>&copy;Copyright 2022 - Guilherme Brogio</span>
+        </FooterCSS>
       </ThemeProvider>
     </LayoutContext.Provider>
   );
