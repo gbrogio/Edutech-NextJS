@@ -15,6 +15,8 @@ export const ContainerCSS = styled.div<ContainerCSSProps>`
   display: none;
   flex-direction: column;
 
+  top: 0;
+  left: 0;
   width: 320px;
   height: 100%;
   z-index: 103;
