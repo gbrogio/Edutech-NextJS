@@ -52,8 +52,6 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
         <GlobalStyles.Shadows />
         <GlobalStyles.Others />
 
-        <Header />
-
         <Accessibility
           handleFontSize={() =>
             setFontSize(fontSize === '16px' ? '18px' : '16px')
@@ -63,6 +61,7 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
           }
         />
 
+        <Header />
         <MainCSS>{children}</MainCSS>
         <FooterCSS />
       </ThemeProvider>
