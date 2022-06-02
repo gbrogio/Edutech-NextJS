@@ -15,7 +15,6 @@ export const ContainerCSS = styled.div<CourseCardProps>`
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-size: 400%;
 
   transition: 0.2s ease-in-out;
   animation: shimmer 2.5s infinite;
@@ -30,6 +29,7 @@ export const ContainerCSS = styled.div<CourseCardProps>`
     var(--color-gray-400) 65%,
     var(--color-gray-400) 100%
   );
+  background-size: 400%;
 
   .course-text-wrapper {
     display: flex;
