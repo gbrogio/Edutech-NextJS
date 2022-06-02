@@ -35,6 +35,7 @@ const NavigationSection = () => {
 };
 
 export const Header = () => {
+  const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -45,6 +46,7 @@ export const Header = () => {
             <SidebarTrigger
               aria-expanded={sidebarOpen}
               id="sidebar-trigger-:t-1:"
+              aria-label={t('sidebar.sidebar-trigger-aria-label')}
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
             <h1 className="site-title">

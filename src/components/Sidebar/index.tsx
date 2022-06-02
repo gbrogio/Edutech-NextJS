@@ -63,6 +63,7 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       >
         <SidebarTrigger
           aria-expanded={sidebarOpen}
+          aria-label={t('sidebar.sidebar-trigger-aria-label')}
           id="sidebar-trigger-:t-2:"
           onClick={() => setSidebarOpen(false)}
         />
