@@ -1,4 +1,4 @@
-import { createContext, useMemo } from 'react';
+import { createContext, useEffect, useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { Accessibility } from '@components/Accessibility';
@@ -34,6 +34,11 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
     'THEME',
     'default',
   );
+
+  useEffect(() => {
+    document.querySelector('html')!.style.fontSize = fontSize;
+  }, [fontSize]);
+
   const contextValue = useMemo(
     () => ({
       cTheme: theme,
