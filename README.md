@@ -35,7 +35,6 @@
 # <h1 id="about">📜 About</h1>
 <p>Site to help students in the <b>EDU</b>TECH program. To find your courses in a simple, fast and accessible way.</p>
 
-Figma file: [Figma](https://www.figma.com/file/sy7bHGmsvnh3DjuhhEjY69/Edutech?node-id=3%3A3) <br>
 Website: [edutech-gbrogio.vercel.app](https://www.edutech-gbrogio.vercel.app)
 
 obs: Unfortunately, so far, the search for series is restricted to the options
