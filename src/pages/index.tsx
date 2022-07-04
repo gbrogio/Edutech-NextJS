@@ -98,7 +98,7 @@ const Home = ({ theme }: HomeProps) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const cookie = FetcherCookie(ctx);
-  const theme = cookie.get('THEME');
+  const theme = cookie.get('THEME') || null;
 
   return {
     props: {
