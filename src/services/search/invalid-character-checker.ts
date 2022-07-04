@@ -32,7 +32,7 @@ export function invalidCharacterChecker(
       invalidCharacters: [],
     };
   }
-  if (!permitSpaces && text.match(/\s/g)) {
+  if (!permitSpaces && text.match(/^\s$/g)) {
     return {
       isInvalid: true,
       type: 'spaces',
