@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { usePalette } from 'react-palette';
+import ReactHtmlParser from 'react-html-parser';
 
 import { useTheme } from 'styled-components';
 
@@ -42,7 +43,7 @@ const CourseCard = ({ estimatedTime, name, slug }: props) => {
       <div className="course-text-wrapper">
         <p>
           <strong style={{ color }}>{t('course-card.name')}:</strong>
-          <span lang="pt-br">{name}</span>
+          <span lang="pt-br">{ReactHtmlParser(name)}</span>
         </p>
         <p>
           <strong style={{ color }}>{t('course-card.estimated-time')}:</strong>

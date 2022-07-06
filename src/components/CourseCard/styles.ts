@@ -41,6 +41,9 @@ export const ContainerCSS = styled.div<CourseCardProps>`
     p {
       display: flex;
       flex-direction: column;
+      > span > span {
+        background-color: yellow;
+      }
     }
   }
   .course-image-wrapper {
