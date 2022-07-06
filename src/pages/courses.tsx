@@ -31,10 +31,13 @@ const Courses = () => {
   return (
     <>
       <Form />
-      {filteredDataCoursesError.isInvalid ? (
+      {filteredDataCoursesError.isInvalid && loadedDataCourses.length === 0 ? (
         <ErrorStatus>{t('fetch-status.no-result')}</ErrorStatus>
       ) : (
-        dataCoursesError && <ErrorStatus>{t('fetch-status.error')}</ErrorStatus>
+        dataCoursesError &&
+        loadedDataCourses.length === 0 && (
+          <ErrorStatus>{t('fetch-status.error')}</ErrorStatus>
+        )
       )}
       {datasCoursesLoading &&
         !datasCoursesError &&
@@ -50,11 +53,17 @@ const Courses = () => {
         <section className="courses-container">
           <div className="courses-container-wrapper">
             <ul>
-              {loadedDataCourses.map((course) => (
-                <li key={course.slug}>
-                  <CourseCard {...course} />
-                </li>
-              ))}
+              {loadedDataCourses.map((course) => {
+                const slugReplaced = course.slug
+                  .replace('<span>', '')
+                  .replace('</span>', '');
+
+                return (
+                  <li key={slugReplaced}>
+                    <CourseCard {...course} />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
